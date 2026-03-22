@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE repositories SYSTEM "https://www.gentoo.org/dtd/repositories.dtd">
+<repositories version="1.0">
+	<repo quality="experimental" status="unofficial">
+		<name>diodonfrost</name>
+		<description>diodonfrost's Gentoo packages</description>
+		<homepage>https://github.com/diodonfrost/gentoo-overlay</homepage>
+		<owner>
+			<email>diodon.frost@diodonfrost.me</email>
+			<name>diodonfrost</name>
+		</owner>
+	</repo>
+</repositories>
