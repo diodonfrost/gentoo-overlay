@@ -1,0 +1,153 @@
+name: Check upstream versions
+
+on:
+  schedule:
+    - cron: "0 6,18 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  detect-updates:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.compare.outputs.matrix }}
+      has_updates: ${{ steps.compare.outputs.has_updates }}
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - name: Install nvchecker
+        run: pip install nvchecker
+
+      - name: Check upstream versions
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: nvchecker -c .github/nvchecker.toml
+
+      - name: Compare versions and build matrix
+        id: compare
+        run: |
+          MATRIX=$(python3 -c "
+          import json, tomllib
+
+          with open('.github/old_ver.json') as f:
+              old = json.load(f)
+          with open('.github/new_ver.json') as f:
+              raw_new = json.load(f)
+          with open('.github/nvchecker.toml', 'rb') as f:
+              config = tomllib.load(f)
+          config.pop('__config__', None)
+
+          # nvchecker v2 format: {version: 2, data: {atom: {version: '...'}}}
+          if 'data' in raw_new:
+              new = {k: v['version'] for k, v in raw_new['data'].items()}
+          else:
+              new = raw_new
+
+          updates = []
+          for atom, new_ver in new.items():
+              old_ver = old.get(atom, '')
+              if old_ver == new_ver:
+                  continue
+              category, name = atom.split('/')
+              pkg = config.get(atom, {})
+              gh = pkg.get('github', '')
+              gl = pkg.get('gitlab', '')
+              prefix = pkg.get('prefix', '')
+              if gh:
+                  url = f'https://github.com/{gh}/releases/tag/{prefix}{new_ver}'
+              elif gl:
+                  url = f'https://gitlab.com/{gl}/-/releases/{prefix}{new_ver}'
+              else:
+                  url = ''
+              updates.append({
+                  'atom': atom,
+                  'category': category,
+                  'name': name,
+                  'old_version': old_ver,
+                  'new_version': new_ver,
+                  'release_url': url,
+              })
+          print(json.dumps({'include': updates}, separators=(',', ':')))
+          ")
+
+          if [ "$MATRIX" = '{"include":[]}' ]; then
+            echo "All packages are up to date"
+            echo "has_updates=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_updates=true" >> "$GITHUB_OUTPUT"
+          fi
+          echo "matrix=${MATRIX}" >> "$GITHUB_OUTPUT"
+
+      - name: Update old_ver.json
+        run: |
+          python3 -c "
+          import json
+          with open('.github/old_ver.json') as f:
+              old = json.load(f)
+          with open('.github/new_ver.json') as f:
+              raw_new = json.load(f)
+
+          # nvchecker v2 format: {version: 2, data: {atom: {version: '...'}}}
+          if 'data' in raw_new:
+              new = {k: v['version'] for k, v in raw_new['data'].items()}
+          else:
+              new = raw_new
+
+          old.update(new)
+          with open('.github/old_ver.json', 'w') as f:
+              json.dump(old, f, indent=2, sort_keys=True)
+              f.write('\n')
+          "
+
+      - name: Commit old_ver.json
+        uses: peter-evans/create-pull-request@v8
+        with:
+          commit-message: "chore: update old_ver.json with latest upstream versions"
+          branch: chore/update-old-ver
+          title: "chore: update old_ver.json"
+          body: "Auto-update des versions connues après vérification nvchecker."
+          delete-branch: true
+
+  create-pr:
+    needs: detect-updates
+    if: needs.detect-updates.outputs.has_updates == 'true'
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: ${{ fromJson(needs.detect-updates.outputs.matrix) }}
+      fail-fast: false
+      max-parallel: 5
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Bump ebuild version
+        run: |
+          OLD_EBUILD="${{ matrix.category }}/${{ matrix.name }}/${{ matrix.name }}-${{ matrix.old_version }}.ebuild"
+          NEW_EBUILD="${{ matrix.category }}/${{ matrix.name }}/${{ matrix.name }}-${{ matrix.new_version }}.ebuild"
+
+          cp "${OLD_EBUILD}" "${NEW_EBUILD}"
+          rm "${OLD_EBUILD}"
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v8
+        with:
+          branch: "update/${{ matrix.name }}-${{ matrix.new_version }}"
+          commit-message: "feat(packages): add ${{ matrix.name }} ${{ matrix.new_version }} build"
+          title: "Update ${{ matrix.name }} to ${{ matrix.new_version }}"
+          body: |
+            ## Summary
+            - Bumps **${{ matrix.atom }}** from `${{ matrix.old_version }}` to `${{ matrix.new_version }}`
+            - Upstream release: ${{ matrix.release_url }}
+
+            ## Test plan
+            - [ ] `just test-lint` passes (pkgcheck QA)
+            - [ ] `just test-build ${{ matrix.category }}/${{ matrix.name }}-${{ matrix.new_version }}` succeeds
+
+            _Automated version bump by version-check workflow_
+          delete-branch: true

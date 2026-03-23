@@ -3,7 +3,7 @@ FROM gentoo/stage3:latest
 
 COPY --from=portage /var/db/repos/gentoo /var/db/repos/gentoo
 
-# Portage config (sandbox désactivé car tous les ebuilds ont RESTRICT="network-sandbox")
+# Portage config (sandbox disabled because all ebuilds use RESTRICT="network-sandbox")
 RUN echo 'FEATURES="-network-sandbox -ipc-sandbox -pid-sandbox"' >> /etc/portage/make.conf && \
     echo 'ACCEPT_KEYWORDS="~amd64"' >> /etc/portage/make.conf && \
     echo 'ACCEPT_LICENSE="*"' >> /etc/portage/make.conf && \
@@ -12,18 +12,19 @@ RUN echo 'FEATURES="-network-sandbox -ipc-sandbox -pid-sandbox"' >> /etc/portage
     mkdir -p /etc/portage/package.mask && \
     echo '>=dev-lang/ruby-3.4' > /etc/portage/package.mask/ruby
 
-# pkgcheck installé AVANT le COPY overlay pour bénéficier du cache Docker
+# pkgcheck installed BEFORE COPY overlay to benefit from Docker cache
 RUN emerge --quiet --noreplace dev-util/pkgcheck
 
-# Config repos.conf pour l'overlay
+# repos.conf config for the overlay
 RUN mkdir -p /etc/portage/repos.conf && \
+    cp /usr/share/portage/config/repos.conf /etc/portage/repos.conf/gentoo.conf && \
     printf '[diodonfrost]\nlocation = /var/db/repos/diodonfrost\n' \
     > /etc/portage/repos.conf/diodonfrost.conf
 
-# Copie de l'overlay (seule couche invalidée à chaque modification)
+# Copy overlay (only layer invalidated on each change)
 COPY . /var/db/repos/diodonfrost
 
-# Génération des Manifests (checksums des tarballs source)
+# Generate Manifests (source tarball checksums)
 RUN for ebuild in $(find /var/db/repos/diodonfrost -name '*.ebuild'); do \
         ebuild "${ebuild}" manifest; \
     done

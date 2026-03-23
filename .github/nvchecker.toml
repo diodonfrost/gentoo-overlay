@@ -1,0 +1,108 @@
+[__config__]
+oldver = "old_ver.json"
+newver = "new_ver.json"
+
+# --- Go packages ---
+
+["app-admin/helm"]
+source = "github"
+github = "helm/helm"
+use_latest_release = true
+prefix = "v"
+
+["app-admin/kubectl"]
+source = "github"
+github = "kubernetes/kubernetes"
+use_latest_release = true
+prefix = "v"
+
+["app-admin/packer"]
+source = "github"
+github = "hashicorp/packer"
+use_latest_release = true
+prefix = "v"
+
+["app-admin/pulumi"]
+source = "github"
+github = "pulumi/pulumi"
+use_latest_release = true
+prefix = "v"
+
+["app-admin/terraform"]
+source = "github"
+github = "hashicorp/terraform"
+use_latest_release = true
+prefix = "v"
+
+["app-admin/terragrunt"]
+source = "github"
+github = "gruntwork-io/terragrunt"
+use_latest_release = true
+prefix = "v"
+
+["app-crypt/sops"]
+source = "github"
+github = "getsops/sops"
+use_latest_release = true
+prefix = "v"
+
+["dev-util/github-cli"]
+source = "github"
+github = "cli/cli"
+use_latest_release = true
+prefix = "v"
+
+# --- GitLab package ---
+
+["dev-util/glab"]
+source = "gitlab"
+gitlab = "gitlab-org/cli"
+use_max_tag = true
+prefix = "v"
+include_regex = "^v\\d+\\.\\d+\\.\\d+$"
+
+# --- Rust packages ---
+
+["dev-build/just"]
+source = "github"
+github = "casey/just"
+use_max_tag = true
+include_regex = "^\\d+\\.\\d+\\.\\d+$"
+
+["www-client/servo"]
+source = "github"
+github = "servo/servo"
+use_latest_release = true
+prefix = "v"
+
+# --- Rust + npm hybrid ---
+
+["app-accessibility/handy"]
+source = "github"
+github = "cjpais/handy"
+use_latest_release = true
+prefix = "v"
+
+# --- Ruby packages ---
+
+["app-admin/vagrant"]
+source = "github"
+github = "hashicorp/vagrant"
+use_latest_release = true
+prefix = "v"
+
+["dev-util/inspec"]
+source = "github"
+github = "inspec/inspec"
+use_latest_release = true
+prefix = "v"
+
+# --- Binary packages ---
+
+["dev-node/bun-bin"]
+source = "github"
+github = "oven-sh/bun"
+use_latest_release = true
+prefix = "bun-v"
+
+# Note: net-im/discord-bin is excluded (no reliable release API)

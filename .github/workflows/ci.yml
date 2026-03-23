@@ -1,0 +1,78 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [master]
+    paths-ignore:
+      - "*.md"
+      - "LICENSE"
+      - ".devcontainer/**"
+  push:
+    branches: [master]
+    paths-ignore:
+      - "*.md"
+      - "LICENSE"
+      - ".devcontainer/**"
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: extractions/setup-just@v3
+
+      - name: Run pkgcheck lint
+        run: just test-lint
+
+  detect-changed-packages:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    outputs:
+      packages: ${{ steps.detect.outputs.packages }}
+      has_packages: ${{ steps.detect.outputs.has_packages }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Detect changed ebuilds
+        id: detect
+        run: |
+          CHANGED_EBUILDS=$(git diff --name-only --diff-filter=AM origin/${{ github.base_ref }}...HEAD \
+            | grep '\.ebuild$' || true)
+
+          if [ -z "$CHANGED_EBUILDS" ]; then
+            echo "has_packages=false" >> "$GITHUB_OUTPUT"
+            echo "packages=[]" >> "$GITHUB_OUTPUT"
+            echo "No changed ebuilds detected"
+            exit 0
+          fi
+
+          # Extract Gentoo atoms: app-admin/helm/helm-4.2.0.ebuild -> app-admin/helm-4.2.0
+          PACKAGES=$(echo "$CHANGED_EBUILDS" | while read -r ebuild; do
+            dir=$(dirname "$ebuild")
+            base=$(basename "$ebuild" .ebuild)
+            echo "${dir%/*}/${base}"
+          done | sort -u | jq -R -s -c 'split("\n") | map(select(. != ""))')
+
+          echo "packages=${PACKAGES}" >> "$GITHUB_OUTPUT"
+          echo "has_packages=true" >> "$GITHUB_OUTPUT"
+          echo "Changed packages: ${PACKAGES}"
+
+  build-test:
+    needs: [lint, detect-changed-packages]
+    if: needs.detect-changed-packages.outputs.has_packages == 'true'
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        package: ${{ fromJson(needs.detect-changed-packages.outputs.packages) }}
+      fail-fast: false
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: extractions/setup-just@v3
+
+      - name: Test build ${{ matrix.package }}
+        timeout-minutes: 120
+        run: just test-build "${{ matrix.package }}"
