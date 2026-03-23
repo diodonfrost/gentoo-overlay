@@ -43,7 +43,11 @@ src_compile() {
 }
 
 src_install() {
-	dobin src-tauri/target/release/handy
+	insinto /opt/handy
+	doins -r src-tauri/resources
+	exeinto /opt/handy
+	doexe src-tauri/target/release/handy
+	dosym ../../opt/handy/handy /usr/bin/handy
 
 	newicon -s 32 src-tauri/icons/32x32.png handy.png
 	newicon -s 64 src-tauri/icons/64x64.png handy.png
