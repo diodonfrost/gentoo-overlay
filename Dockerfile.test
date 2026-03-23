@@ -1,0 +1,31 @@
+FROM gentoo/portage:latest AS portage
+FROM gentoo/stage3:latest
+
+COPY --from=portage /var/db/repos/gentoo /var/db/repos/gentoo
+
+# Portage config (sandbox désactivé car tous les ebuilds ont RESTRICT="network-sandbox")
+RUN echo 'FEATURES="-network-sandbox -ipc-sandbox -pid-sandbox"' >> /etc/portage/make.conf && \
+    echo 'ACCEPT_KEYWORDS="~amd64"' >> /etc/portage/make.conf && \
+    echo 'ACCEPT_LICENSE="*"' >> /etc/portage/make.conf && \
+    echo 'RUBY_TARGETS="ruby32 ruby33"' >> /etc/portage/make.conf && \
+    echo 'USE="X icu opengl harfbuzz"' >> /etc/portage/make.conf && \
+    mkdir -p /etc/portage/package.mask && \
+    echo '>=dev-lang/ruby-3.4' > /etc/portage/package.mask/ruby
+
+# pkgcheck installé AVANT le COPY overlay pour bénéficier du cache Docker
+RUN emerge --quiet --noreplace dev-util/pkgcheck
+
+# Config repos.conf pour l'overlay
+RUN mkdir -p /etc/portage/repos.conf && \
+    printf '[diodonfrost]\nlocation = /var/db/repos/diodonfrost\n' \
+    > /etc/portage/repos.conf/diodonfrost.conf
+
+# Copie de l'overlay (seule couche invalidée à chaque modification)
+COPY . /var/db/repos/diodonfrost
+
+# Génération des Manifests (checksums des tarballs source)
+RUN for ebuild in $(find /var/db/repos/diodonfrost -name '*.ebuild'); do \
+        ebuild "${ebuild}" manifest; \
+    done
+
+WORKDIR /var/db/repos/diodonfrost
