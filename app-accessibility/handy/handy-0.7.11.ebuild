@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit cargo
+inherit cargo desktop xdg
 
 DESCRIPTION="Free, open source, and extensible speech-to-text application that works completely offline"
 HOMEPAGE="https://handy.computer"
@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 BDEPEND="
-	>=virtual/rust-1.85.0
+	>=dev-lang/rust-1.85.0
 	net-libs/nodejs[npm]
 "
 
@@ -38,4 +38,11 @@ src_compile() {
 
 src_install() {
 	dobin src-tauri/target/release/handy
+
+	newicon -s 32 src-tauri/icons/32x32.png handy.png
+	newicon -s 64 src-tauri/icons/64x64.png handy.png
+	newicon -s 128 src-tauri/icons/128x128.png handy.png
+	newicon -s 256 src-tauri/icons/128x128@2x.png handy.png
+
+	make_desktop_entry handy "Handy" handy "Audio;Accessibility;Utility;"
 }
