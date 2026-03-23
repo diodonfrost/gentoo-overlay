@@ -34,20 +34,26 @@ src_unpack() {
 	default
 }
 
+src_prepare() {
+	default
+	# Replace bun with npm and disable updater signing for build
+	sed -i \
+		-e 's|"beforeBuildCommand": "bun run build"|"beforeBuildCommand": "npm run build"|' \
+		-e '/"createUpdaterArtifacts"/s|true|false|' \
+		src-tauri/tauri.conf.json || die
+}
+
 src_compile() {
 	cd "${S}" || die
 	npm install --ignore-scripts || die "npm install failed"
-	npm run build || die "npm build failed"
-	cd "${S}/src-tauri" || die
-	cargo build --release || die "cargo build failed"
+	NO_STRIP=true npx tauri build -b deb || die "tauri build failed"
 }
 
 src_install() {
-	insinto /opt/handy
-	doins -r src-tauri/resources
-	exeinto /opt/handy
-	doexe src-tauri/target/release/handy
-	dosym ../../opt/handy/handy /usr/bin/handy
+	dobin src-tauri/target/release/handy
+
+	insinto /usr/lib/Handy/resources
+	doins -r src-tauri/resources/*
 
 	newicon -s 32 src-tauri/icons/32x32.png handy.png
 	newicon -s 64 src-tauri/icons/64x64.png handy.png
