@@ -109,6 +109,7 @@ jobs:
       - name: Commit old_ver.json
         uses: peter-evans/create-pull-request@v8
         with:
+          token: ${{ secrets.GH_PAT }}
           commit-message: "chore: update old_ver.json with latest upstream versions"
           branch: chore/update-old-ver
           title: "chore: update old_ver.json"
@@ -137,6 +138,7 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v8
         with:
+          token: ${{ secrets.GH_PAT }}
           branch: "update/${{ matrix.name }}-${{ matrix.new_version }}"
           commit-message: "feat(packages): add ${{ matrix.name }} ${{ matrix.new_version }} build"
           title: "Update ${{ matrix.name }} to ${{ matrix.new_version }}"
