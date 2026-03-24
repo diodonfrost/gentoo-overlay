@@ -1,5 +1,5 @@
 FROM gentoo/portage:latest AS portage
-FROM gentoo/stage3:latest
+FROM ghcr.io/diodonfrost/gentoo-ci-rust:latest
 
 COPY --from=portage /var/db/repos/gentoo /var/db/repos/gentoo
 
@@ -8,7 +8,7 @@ RUN echo 'FEATURES="-network-sandbox -ipc-sandbox -pid-sandbox"' >> /etc/portage
     echo 'ACCEPT_KEYWORDS="~amd64"' >> /etc/portage/make.conf && \
     echo 'ACCEPT_LICENSE="*"' >> /etc/portage/make.conf && \
     echo 'RUBY_TARGETS="ruby32 ruby33"' >> /etc/portage/make.conf && \
-    echo 'USE="X icu opengl harfbuzz"' >> /etc/portage/make.conf && \
+    echo 'USE="X wayland icu opengl harfbuzz"' >> /etc/portage/make.conf && \
     mkdir -p /etc/portage/package.mask && \
     echo '>=dev-lang/ruby-3.4' > /etc/portage/package.mask/ruby
 
