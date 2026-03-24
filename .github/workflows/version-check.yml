@@ -140,7 +140,7 @@ jobs:
         with:
           token: ${{ secrets.GH_PAT }}
           branch: "update/${{ matrix.name }}-${{ matrix.new_version }}"
-          commit-message: "feat(packages): add ${{ matrix.name }} ${{ matrix.new_version }} build"
+          commit-message: "feat(${{ matrix.name }}): version bump to ${{ matrix.new_version }}"
           title: "Update ${{ matrix.name }} to ${{ matrix.new_version }}"
           body: |
             ## Summary
