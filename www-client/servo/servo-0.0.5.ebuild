@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit cargo desktop
+inherit cargo desktop xdg
 
 DESCRIPTION="Lightweight, high-performance web browser engine written in Rust"
 HOMEPAGE="https://servo.org"
@@ -14,9 +14,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm64"
 
 BDEPEND="
-	>=virtual/rust-1.86
+	dev-lang/rust
 	dev-build/cmake
-	dev-build/gperf
+	dev-util/gperf
 	llvm-core/clang
 	virtual/pkgconfig
 "
@@ -50,10 +50,27 @@ DEPEND="${RDEPEND}"
 RESTRICT="network-sandbox"
 
 src_compile() {
-	cargo build --release -p servoshell || die "cargo build failed"
+	# Remove cargo eclass config that replaces crates-io with a local directory,
+	# servo needs to fetch crates and git deps at build time
+	rm -f "${ECARGO_HOME}/config.toml" || die
+	CARGO_TARGET_DIR=target cargo build --release -p servoshell || die "cargo build failed"
 }
 
 src_install() {
-	dobin target/release/servoshell
-	dosym servoshell /usr/bin/servo
+	# Install binary and resources to /opt/servo so servo can find
+	# its resources/ directory relative to the executable
+	exeinto /opt/servo
+	doexe target/release/servo
+
+	insinto /opt/servo/resources
+	doins resources/*
+
+	dosym ../../opt/servo/servo /usr/bin/servo
+
+	newicon resources/servo.svg servo.svg
+	newicon -s 64 resources/servo_64.png servo.png
+	newicon -s 1024 resources/servo_1024.png servo.png
+
+	make_desktop_entry servo "Servo" servo "Network;WebBrowser;" \
+		"MimeType=text/html;text/xml;application/xhtml+xml;x-scheme-handler/http;x-scheme-handler/https;"
 }
