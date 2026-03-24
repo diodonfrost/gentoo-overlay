@@ -154,6 +154,8 @@ jobs:
         uses: peter-evans/create-pull-request@v8
         with:
           token: ${{ steps.app-token.outputs.token }}
+          author: diodonfrost-bot-gentoo-overlay[bot] <270583476+diodonfrost-bot-gentoo-overlay[bot]@users.noreply.github.com>
+          committer: diodonfrost-bot-gentoo-overlay[bot] <270583476+diodonfrost-bot-gentoo-overlay[bot]@users.noreply.github.com>
           branch: "update/${{ matrix.name }}-${{ matrix.new_version }}"
           commit-message: "feat(${{ matrix.name }}): version bump to ${{ matrix.new_version }}"
           title: "Update ${{ matrix.name }} to ${{ matrix.new_version }}"
