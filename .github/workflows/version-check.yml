@@ -106,10 +106,17 @@ jobs:
               f.write('\n')
           "
 
+      - name: Generate app token
+        id: app-token-oldver
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+
       - name: Commit old_ver.json
         uses: peter-evans/create-pull-request@v8
         with:
-          token: ${{ secrets.GH_PAT }}
+          token: ${{ steps.app-token-oldver.outputs.token }}
           commit-message: "chore: update old_ver.json with latest upstream versions"
           branch: chore/update-old-ver
           title: "chore: update old_ver.json"
@@ -127,6 +134,13 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
+      - name: Generate app token
+        id: app-token
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+
       - name: Bump ebuild version
         run: |
           OLD_EBUILD="${{ matrix.category }}/${{ matrix.name }}/${{ matrix.name }}-${{ matrix.old_version }}.ebuild"
@@ -136,9 +150,10 @@ jobs:
           rm "${OLD_EBUILD}"
 
       - name: Create Pull Request
+        id: create-pr
         uses: peter-evans/create-pull-request@v8
         with:
-          token: ${{ secrets.GH_PAT }}
+          token: ${{ steps.app-token.outputs.token }}
           branch: "update/${{ matrix.name }}-${{ matrix.new_version }}"
           commit-message: "feat(${{ matrix.name }}): version bump to ${{ matrix.new_version }}"
           title: "Update ${{ matrix.name }} to ${{ matrix.new_version }}"
@@ -153,3 +168,11 @@ jobs:
 
             _Automated version bump by version-check workflow_
           delete-branch: true
+
+      - name: Enable auto-merge
+        if: steps.create-pr.outputs.pull-request-number != ''
+        uses: peter-evans/enable-pull-request-automerge@v3
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+          pull-request-number: ${{ steps.create-pr.outputs.pull-request-number }}
+          merge-method: squash
