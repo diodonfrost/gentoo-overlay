@@ -6,6 +6,10 @@ build:
 test-lint: build
     docker run --rm {{image_name}} pkgcheck scan --net
 
+test-pretend package: build
+    docker run --rm --network=host {{image_name}} \
+        emerge --quiet --pretend '={{package}}' 2>&1
+
 test-build package: build
     docker run --rm --network=host {{image_name}} \
         emerge --verbose --oneshot '={{package}}' 2>&1
