@@ -39,7 +39,7 @@ jobs:
       - name: Detect changed ebuilds
         id: detect
         run: |
-          CHANGED_EBUILDS=$(git diff --name-only --diff-filter=AM origin/${{ github.base_ref }}...HEAD \
+          CHANGED_EBUILDS=$(git diff --name-only --diff-filter=AM ${{ github.event.pull_request.base.sha }}...${{ github.event.pull_request.head.sha }} \
             | grep '\.ebuild$' || true)
 
           if [ -z "$CHANGED_EBUILDS" ]; then
