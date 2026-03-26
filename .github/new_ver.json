@@ -2,9 +2,9 @@
   "version": 2,
   "data": {
     "app-accessibility/handy": {
-      "version": "0.8.0",
-      "gitref": "refs/tags/v0.8.0",
-      "url": "https://github.com/cjpais/Handy/releases/tag/v0.8.0"
+      "version": "0.8.1",
+      "gitref": "refs/tags/v0.8.1",
+      "url": "https://github.com/cjpais/Handy/releases/tag/v0.8.1"
     },
     "app-admin/helm": {
       "version": "4.1.3",
@@ -17,24 +17,24 @@
       "url": "https://github.com/kubernetes/kubernetes/releases/tag/v1.35.3"
     },
     "app-admin/packer": {
-      "version": "1.15.0",
-      "gitref": "refs/tags/v1.15.0",
-      "url": "https://github.com/hashicorp/packer/releases/tag/v1.15.0"
+      "version": "1.15.1",
+      "gitref": "refs/tags/v1.15.1",
+      "url": "https://github.com/hashicorp/packer/releases/tag/v1.15.1"
     },
     "app-admin/pulumi": {
-      "version": "3.227.0",
-      "gitref": "refs/tags/v3.227.0",
-      "url": "https://github.com/pulumi/pulumi/releases/tag/v3.227.0"
+      "version": "3.228.0",
+      "gitref": "refs/tags/v3.228.0",
+      "url": "https://github.com/pulumi/pulumi/releases/tag/v3.228.0"
     },
     "app-admin/terraform": {
-      "version": "1.14.7",
-      "gitref": "refs/tags/v1.14.7",
-      "url": "https://github.com/hashicorp/terraform/releases/tag/v1.14.7"
+      "version": "1.14.8",
+      "gitref": "refs/tags/v1.14.8",
+      "url": "https://github.com/hashicorp/terraform/releases/tag/v1.14.8"
     },
     "app-admin/terragrunt": {
-      "version": "0.99.4",
-      "gitref": "refs/tags/v0.99.4",
-      "url": "https://github.com/gruntwork-io/terragrunt/releases/tag/v0.99.4"
+      "version": "0.99.5",
+      "gitref": "refs/tags/v0.99.5",
+      "url": "https://github.com/gruntwork-io/terragrunt/releases/tag/v0.99.5"
     },
     "app-admin/vagrant": {
       "version": "2.4.9",
@@ -58,9 +58,9 @@
       "url": "https://github.com/oven-sh/bun/releases/tag/bun-v1.3.11"
     },
     "dev-util/github-cli": {
-      "version": "2.88.1",
-      "gitref": "refs/tags/v2.88.1",
-      "url": "https://github.com/cli/cli/releases/tag/v2.88.1"
+      "version": "2.89.0",
+      "gitref": "refs/tags/v2.89.0",
+      "url": "https://github.com/cli/cli/releases/tag/v2.89.0"
     },
     "dev-util/glab": {
       "version": "1.90.0",
