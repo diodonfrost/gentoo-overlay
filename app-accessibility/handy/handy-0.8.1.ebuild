@@ -5,7 +5,7 @@ EAPI=8
 
 inherit cargo desktop xdg
 
-DESCRIPTION="Free, open source, and extensible speech-to-text application that works completely offline"
+DESCRIPTION="Open source extensible speech-to-text application working offline"
 HOMEPAGE="https://handy.computer"
 SRC_URI="https://github.com/cjpais/Handy/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 S="${WORKDIR}/Handy-${PV}"
