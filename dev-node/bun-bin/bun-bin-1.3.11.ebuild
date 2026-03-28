@@ -9,6 +9,7 @@ SRC_URI="
 	amd64? ( https://github.com/oven-sh/bun/releases/download/bun-v${PV}/bun-linux-x64.zip )
 	arm64? ( https://github.com/oven-sh/bun/releases/download/bun-v${PV}/bun-linux-aarch64.zip )
 "
+S="${WORKDIR}"
 
 LICENSE="MIT"
 SLOT="0"
@@ -19,8 +20,6 @@ RESTRICT="bindist mirror strip"
 BDEPEND="app-arch/unzip"
 
 QA_PREBUILT="usr/bin/bun"
-
-S="${WORKDIR}"
 
 src_install() {
 	local arch
