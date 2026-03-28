@@ -5,7 +5,7 @@ EAPI=8
 
 inherit go-module
 
-DESCRIPTION="Tool for creating identical machine images for multiple platforms from a single source configuration"
+DESCRIPTION="Tool for creating machine images for multiple platforms"
 HOMEPAGE="https://developer.hashicorp.com/packer"
 SRC_URI="https://github.com/hashicorp/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
