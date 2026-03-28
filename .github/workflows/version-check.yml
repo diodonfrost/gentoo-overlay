@@ -158,6 +158,11 @@ jobs:
           cp "${OLD_EBUILD}" "${NEW_EBUILD}"
           rm "${OLD_EBUILD}"
 
+      - name: Generate Manifest
+        run: |
+          python3 .github/scripts/generate-manifest.py \
+            "${{ matrix.category }}/${{ matrix.name }}/${{ matrix.name }}-${{ matrix.new_version }}.ebuild"
+
       - name: Create Pull Request
         id: create-pr
         uses: peter-evans/create-pull-request@v8
