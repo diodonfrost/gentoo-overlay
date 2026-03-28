@@ -4,7 +4,7 @@
 EAPI=8
 
 DESCRIPTION="Tool for building and distributing development environments"
-HOMEPAGE="https://www.vagrantup.com"
+HOMEPAGE="https://developer.hashicorp.com/vagrant"
 SRC_URI="https://github.com/hashicorp/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BUSL-1.1"
