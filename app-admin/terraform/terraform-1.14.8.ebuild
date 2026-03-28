@@ -5,8 +5,8 @@ EAPI=8
 
 inherit go-module
 
-DESCRIPTION="Tool for building, changing, and versioning infrastructure safely and efficiently"
-HOMEPAGE="https://www.terraform.io"
+DESCRIPTION="Tool for building, changing, and versioning infrastructure safely"
+HOMEPAGE="https://developer.hashicorp.com/terraform"
 SRC_URI="https://github.com/hashicorp/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BUSL-1.1"
