@@ -6,7 +6,7 @@ EAPI=8
 inherit go-module
 
 DESCRIPTION="Flexible orchestration tool that allows Infrastructure as Code to scale"
-HOMEPAGE="https://terragrunt.gruntwork.io"
+HOMEPAGE="https://terragrunt.com"
 SRC_URI="https://github.com/gruntwork-io/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
