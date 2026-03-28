@@ -13,7 +13,7 @@ LICENSE="CC0-1.0"
 SLOT="0"
 KEYWORDS="~amd64 ~arm64"
 
-BDEPEND=">=virtual/rust-1.85.0"
+BDEPEND=">=dev-lang/rust-1.85.0"
 
 # Network access needed for cargo dependencies
 RESTRICT="network-sandbox"
