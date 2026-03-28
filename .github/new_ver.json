@@ -47,10 +47,10 @@
       "url": "https://github.com/getsops/sops/releases/tag/v3.12.2"
     },
     "dev-build/just": {
-      "version": "1.48.0",
-      "gitref": "refs/tags/1.48.0",
-      "revision": "6ce9eb1730929282ef97d94f73cab0be5b77e246",
-      "url": "https://github.com/casey/just/releases/tag/1.48.0"
+      "version": "1.48.1",
+      "gitref": "refs/tags/1.48.1",
+      "revision": "cd458a2ff047207dbbd6153c306a17a14235ff50",
+      "url": "https://github.com/casey/just/releases/tag/1.48.1"
     },
     "dev-node/bun-bin": {
       "version": "1.3.11",
