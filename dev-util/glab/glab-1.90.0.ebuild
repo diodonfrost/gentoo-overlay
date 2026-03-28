@@ -7,7 +7,7 @@ inherit go-module
 
 DESCRIPTION="GitLab CLI brings GitLab to your terminal"
 HOMEPAGE="https://gitlab.com/gitlab-org/cli"
-SRC_URI="https://gitlab.com/gitlab-org/cli/-/archive/v${PV}/cli-v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://gitlab.com/gitlab-org/cli/-/archive/v${PV}/cli-v${PV}.tar.bz2 -> ${P}.tar.bz2"
 
 S="${WORKDIR}/cli-v${PV}"
 
