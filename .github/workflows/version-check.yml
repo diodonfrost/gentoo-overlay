@@ -121,7 +121,7 @@ jobs:
           commit-message: "chore: update old_ver.json with latest upstream versions"
           branch: chore/update-old-ver
           title: "chore: update old_ver.json"
-          body: "Auto-update des versions connues après vérification nvchecker."
+          body: "Auto-update known versions after nvchecker check."
           delete-branch: true
 
       - name: Enable auto-merge
