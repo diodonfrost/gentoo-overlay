@@ -5,6 +5,11 @@
 		<email>diodon.frost@diodonfrost.me</email>
 		<name>diodonfrost</name>
 	</maintainer>
+	<longdescription>
+		glab is an open source GitLab CLI tool that brings GitLab
+		features like merge requests, issues, pipelines, and CI/CD
+		to your terminal.
+	</longdescription>
 	<upstream>
 		<remote-id type="gitlab">gitlab-org/cli</remote-id>
 	</upstream>
