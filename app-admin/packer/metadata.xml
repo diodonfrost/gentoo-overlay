@@ -5,6 +5,11 @@
 		<email>diodon.frost@diodonfrost.me</email>
 		<name>diodonfrost</name>
 	</maintainer>
+	<longdescription>
+		Packer is a tool for creating identical machine images for multiple
+		platforms from a single source configuration. It supports builders
+		for AWS, Azure, GCP, Docker, VMware, and many more.
+	</longdescription>
 	<upstream>
 		<remote-id type="github">hashicorp/packer</remote-id>
 	</upstream>
