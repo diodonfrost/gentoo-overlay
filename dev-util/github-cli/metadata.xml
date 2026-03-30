@@ -5,6 +5,10 @@
 		<email>diodon.frost@diodonfrost.me</email>
 		<name>diodonfrost</name>
 	</maintainer>
+	<longdescription>
+		gh is GitHub on the command line. It brings pull requests, issues,
+		GitHub Actions, and other GitHub features to your terminal.
+	</longdescription>
 	<upstream>
 		<remote-id type="github">cli/cli</remote-id>
 	</upstream>
