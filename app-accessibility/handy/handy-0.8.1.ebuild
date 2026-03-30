@@ -1,4 +1,4 @@
-# Copyright 2024 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -6,30 +6,41 @@ EAPI=8
 inherit cargo desktop xdg
 
 DESCRIPTION="Open source extensible speech-to-text application working offline"
-HOMEPAGE="https://handy.computer"
+HOMEPAGE="https://handy.computer/ https://github.com/cjpais/Handy"
 SRC_URI="https://github.com/cjpais/Handy/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 S="${WORKDIR}/Handy-${PV}"
 
 LICENSE="MIT"
+# Dependent crate/npm licenses
+LICENSE+=" Apache-2.0 BSD-2 ISC MPL-2.0 Unicode-3.0"
 SLOT="0"
 KEYWORDS="~amd64"
+RESTRICT="network-sandbox test"
 
 BDEPEND="
 	>=dev-lang/rust-1.85.0
+	dev-build/cmake
+	dev-util/vulkan-headers
+	media-libs/shaderc
 	net-libs/nodejs[npm]
+	virtual/pkgconfig
 "
 
 RDEPEND="
 	dev-libs/glib:2
 	gui-libs/gtk-layer-shell
+	media-libs/alsa-lib
+	media-libs/vulkan-loader
 	x11-libs/gtk+:3
 	net-libs/webkit-gtk:4.1
 "
+
 DEPEND="${RDEPEND}"
 
-# Network access needed for cargo and npm/bun dependencies
-RESTRICT="network-sandbox"
+QA_FLAGS_IGNORED="usr/bin/handy"
 
+# Override cargo eclass src_unpack to bypass vendor directory setup
+# since this overlay fetches crate dependencies at build time
 src_unpack() {
 	default
 }
@@ -44,15 +55,25 @@ src_prepare() {
 }
 
 src_compile() {
-	cd "${S}" || die
+	# Remove cargo eclass config that redirects crates-io to a
+	# non-existent vendor directory — tauri needs network access
+	rm -f "${ECARGO_HOME}/config.toml" || die
+
+	# Build frontend assets
 	npm install --ignore-scripts || die "npm install failed"
-	NO_STRIP=true npx tauri build -b deb || die "tauri build failed"
+	npm run build || die "frontend build failed"
+
+	# Build the Rust binary directly instead of using tauri CLI bundler
+	# (tauri build -b deb is an anti-pattern in Gentoo ebuilds)
+	export PKG_CONFIG_PATH="/usr/lib64/pkgconfig:/usr/share/pkgconfig"
+	cd src-tauri || die
+	cargo build --release || die "cargo build failed"
 }
 
 src_install() {
 	dobin src-tauri/target/release/handy
 
-	insinto /usr/lib/Handy/resources
+	insinto /usr/share/${PN}/resources
 	doins -r src-tauri/resources/*
 
 	newicon -s 32 src-tauri/icons/32x32.png handy.png
