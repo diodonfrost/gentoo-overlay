@@ -5,6 +5,11 @@
 		<email>diodon.frost@diodonfrost.me</email>
 		<name>diodonfrost</name>
 	</maintainer>
+	<longdescription>
+		Bun is an all-in-one JavaScript and TypeScript toolkit. It serves
+		as a runtime, bundler, test runner, and package manager, designed
+		as a drop-in replacement for Node.js with focus on performance.
+	</longdescription>
 	<upstream>
 		<remote-id type="github">oven-sh/bun</remote-id>
 	</upstream>
