@@ -5,6 +5,11 @@
 		<email>diodon.frost@diodonfrost.me</email>
 		<name>diodonfrost</name>
 	</maintainer>
+	<longdescription>
+		Pulumi is an infrastructure as code platform that allows you to
+		use familiar programming languages and tools to build, deploy,
+		and manage cloud infrastructure.
+	</longdescription>
 	<upstream>
 		<remote-id type="github">pulumi/pulumi</remote-id>
 	</upstream>
