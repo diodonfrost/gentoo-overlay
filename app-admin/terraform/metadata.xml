@@ -5,6 +5,12 @@
 		<email>diodon.frost@diodonfrost.me</email>
 		<name>diodonfrost</name>
 	</maintainer>
+	<longdescription>
+		Terraform enables you to safely and predictably create, change,
+		and improve infrastructure. It codifies APIs into declarative
+		configuration files that can be shared, versioned, and treated
+		as code.
+	</longdescription>
 	<upstream>
 		<remote-id type="github">hashicorp/terraform</remote-id>
 	</upstream>
