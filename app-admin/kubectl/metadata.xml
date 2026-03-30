@@ -5,6 +5,11 @@
 		<email>diodon.frost@diodonfrost.me</email>
 		<name>diodonfrost</name>
 	</maintainer>
+	<longdescription>
+		kubectl is the command-line tool for interacting with Kubernetes
+		clusters. It allows you to deploy applications, inspect and manage
+		cluster resources, and view logs.
+	</longdescription>
 	<upstream>
 		<remote-id type="github">kubernetes/kubernetes</remote-id>
 	</upstream>
