@@ -5,6 +5,11 @@
 		<email>diodon.frost@diodonfrost.me</email>
 		<name>diodonfrost</name>
 	</maintainer>
+	<longdescription>
+		Helm is the package manager for Kubernetes. It helps you define,
+		install, and upgrade applications on Kubernetes clusters using
+		charts, which are packages of pre-configured Kubernetes resources.
+	</longdescription>
 	<upstream>
 		<remote-id type="github">helm/helm</remote-id>
 	</upstream>
