@@ -5,6 +5,11 @@
 		<email>diodon.frost@diodonfrost.me</email>
 		<name>diodonfrost</name>
 	</maintainer>
+	<longdescription>
+		sops is an editor of encrypted files that supports YAML, JSON,
+		ENV, INI and BINARY formats and encrypts with AWS KMS, GCP KMS,
+		Azure Key Vault, age, and PGP.
+	</longdescription>
 	<upstream>
 		<remote-id type="github">getsops/sops</remote-id>
 	</upstream>
