@@ -5,6 +5,12 @@
 		<email>diodon.frost@diodonfrost.me</email>
 		<name>diodonfrost</name>
 	</maintainer>
+	<longdescription>
+		Terragrunt is a flexible orchestration tool that allows
+		Infrastructure as Code written in OpenTofu/Terraform to scale.
+		It provides extra tools for keeping configurations DRY, working
+		with multiple modules, and managing remote state.
+	</longdescription>
 	<upstream>
 		<remote-id type="github">gruntwork-io/terragrunt</remote-id>
 	</upstream>
