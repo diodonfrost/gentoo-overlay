@@ -5,6 +5,12 @@
 		<email>diodon.frost@diodonfrost.me</email>
 		<name>diodonfrost</name>
 	</maintainer>
+	<longdescription>
+		Vagrant is a tool for building and managing virtual machine
+		environments in a single workflow. It provides easy-to-configure,
+		reproducible, and portable work environments built on top of
+		VirtualBox, VMware, AWS, or any other provider.
+	</longdescription>
 	<upstream>
 		<remote-id type="github">hashicorp/vagrant</remote-id>
 	</upstream>
