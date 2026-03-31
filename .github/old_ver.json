@@ -5,7 +5,7 @@
   "app-admin/packer": "1.15.1",
   "app-admin/pulumi": "3.228.0",
   "app-admin/terraform": "1.14.8",
-  "app-admin/terragrunt": "0.99.5",
+  "app-admin/terragrunt": "1.0.0",
   "app-admin/vagrant": "2.4.9",
   "app-crypt/sops": "3.12.2",
   "dev-build/just": "1.48.1",
@@ -13,5 +13,5 @@
   "dev-util/github-cli": "2.89.0",
   "dev-util/glab": "1.90.0",
   "dev-util/inspec": "5.24.7",
-  "www-client/servo": "0.0.5"
+  "www-client/servo": "0.0.6"
 }
