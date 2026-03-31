@@ -5,7 +5,9 @@
 		<email>diodon.frost@diodonfrost.me</email>
 		<name>diodonfrost</name>
 	</maintainer>
-	<upstream>
-		<remote-id type="github">discord/discord</remote-id>
-	</upstream>
+	<longdescription>
+		Discord is a free voice, video, and text chat application designed
+		for communities and gaming. This package installs the official
+		pre-built Linux client.
+	</longdescription>
 </pkgmetadata>
