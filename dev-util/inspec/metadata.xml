@@ -5,6 +5,11 @@
 		<email>diodon.frost@diodonfrost.me</email>
 		<name>diodonfrost</name>
 	</maintainer>
+	<longdescription>
+		InSpec is an open-source testing framework for infrastructure
+		with a human and machine readable language for specifying
+		compliance, security, and policy requirements.
+	</longdescription>
 	<upstream>
 		<remote-id type="github">inspec/inspec</remote-id>
 	</upstream>

@@ -1,29 +1,22 @@
-# Copyright 2024 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 DESCRIPTION="Infrastructure testing framework with a human-readable language"
-HOMEPAGE="https://docs.chef.io/inspec/"
-SRC_URI="https://github.com/${PN}/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+HOMEPAGE="https://docs.chef.io/inspec/ https://github.com/inspec/inspec"
+SRC_URI="https://github.com/inspec/inspec/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~arm64"
+RESTRICT="network-sandbox test"
 
 RDEPEND="dev-lang/ruby:*"
-DEPEND="${RDEPEND}"
 BDEPEND="
 	dev-lang/ruby
 	dev-ruby/rubygems
 "
-
-# Network access needed for gem dependencies
-RESTRICT="network-sandbox"
-
-pkg_setup() {
-	eselect ruby set 1 || die "Failed to select Ruby"
-}
 
 src_compile() {
 	gem build inspec-core.gemspec || die "gem build inspec-core failed"
@@ -36,19 +29,19 @@ src_install() {
 	local dest="/opt/${PN}"
 
 	gem install --no-document \
-		--install-dir "${ED}/${dest}" \
-		--bindir "${ED}/${dest}/bin" \
+		--install-dir "${ED}${dest}" \
+		--bindir "${ED}${dest}/bin" \
 		"inspec-core-${PV}.gem" || die "gem install inspec-core failed"
 
 	gem install --no-document \
-		--install-dir "${ED}/${dest}" \
-		--bindir "${ED}/${dest}/bin" \
+		--install-dir "${ED}${dest}" \
+		--bindir "${ED}${dest}/bin" \
 		"inspec-${PV}.gem" || die "gem install inspec failed"
 
 	cd "${S}/inspec-bin" || die
 	gem install --no-document \
-		--install-dir "${ED}/${dest}" \
-		--bindir "${ED}/${dest}/bin" \
+		--install-dir "${ED}${dest}" \
+		--bindir "${ED}${dest}/bin" \
 		"inspec-bin-${PV}.gem" || die "gem install inspec-bin failed"
 
 	# Wrapper script with isolated GEM_HOME
@@ -57,7 +50,7 @@ src_install() {
 	#!/bin/sh
 	export GEM_HOME="${dest}"
 	export GEM_PATH="${dest}"
-	exec ${dest}/bin/inspec "\$@"
+	exec "${dest}/bin/inspec" "\$@"
 	EOF
 	fperms 0755 /usr/bin/inspec
 }
