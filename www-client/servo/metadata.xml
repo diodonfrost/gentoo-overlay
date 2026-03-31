@@ -5,6 +5,11 @@
 		<email>diodon.frost@diodonfrost.me</email>
 		<name>diodonfrost</name>
 	</maintainer>
+	<longdescription>
+		Servo is a web rendering engine written in Rust, designed for
+		application developers to embed as a library. It features parallel
+		layout, CSS rendering, and GPU-accelerated compositing.
+	</longdescription>
 	<upstream>
 		<remote-id type="github">servo/servo</remote-id>
 	</upstream>

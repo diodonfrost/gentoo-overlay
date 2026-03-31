@@ -1,20 +1,23 @@
-# Copyright 2024 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
-inherit cargo desktop xdg
+inherit cargo xdg
 
 DESCRIPTION="Lightweight, high-performance web browser engine written in Rust"
-HOMEPAGE="https://servo.org"
-SRC_URI="https://github.com/${PN}/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+HOMEPAGE="https://servo.org/ https://github.com/servo/servo"
+SRC_URI="https://github.com/servo/servo/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MPL-2.0"
+# Dependent crate licenses
+LICENSE+=" Apache-2.0 BSD BSD-2 ISC MIT Unicode-3.0"
 SLOT="0"
-KEYWORDS="~amd64 ~arm64"
+KEYWORDS="~amd64"
+RESTRICT="network-sandbox test"
 
 BDEPEND="
-	dev-lang/rust
+	>=dev-lang/rust-1.85.0
 	dev-build/cmake
 	dev-util/gperf
 	llvm-core/clang
@@ -46,8 +49,13 @@ RDEPEND="
 
 DEPEND="${RDEPEND}"
 
-# Network access needed for Rust crate dependencies
-RESTRICT="network-sandbox"
+QA_FLAGS_IGNORED="opt/servo/servo"
+
+# Override cargo eclass src_unpack to bypass vendor directory setup
+# since this overlay fetches crate dependencies at build time
+src_unpack() {
+	default
+}
 
 src_compile() {
 	# Remove cargo eclass config that replaces crates-io with a local directory,
@@ -65,7 +73,7 @@ src_install() {
 	insinto /opt/servo/resources
 	doins resources/*
 
-	dosym ../../opt/servo/servo /usr/bin/servo
+	dosym -r /opt/servo/servo /usr/bin/servo
 
 	newicon resources/servo.svg servo.svg
 	newicon -s 64 resources/servo_64.png servo.png
