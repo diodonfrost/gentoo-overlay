@@ -32,9 +32,9 @@
       "url": "https://github.com/hashicorp/terraform/releases/tag/v1.14.8"
     },
     "app-admin/terragrunt": {
-      "version": "0.99.5",
-      "gitref": "refs/tags/v0.99.5",
-      "url": "https://github.com/gruntwork-io/terragrunt/releases/tag/v0.99.5"
+      "version": "1.0.0",
+      "gitref": "refs/tags/v1.0.0",
+      "url": "https://github.com/gruntwork-io/terragrunt/releases/tag/v1.0.0"
     },
     "app-admin/vagrant": {
       "version": "2.4.9",
@@ -73,9 +73,9 @@
       "url": "https://github.com/inspec/inspec/releases/tag/v5.24.7"
     },
     "www-client/servo": {
-      "version": "0.0.5",
-      "gitref": "refs/tags/v0.0.5",
-      "url": "https://github.com/servo/servo/releases/tag/v0.0.5"
+      "version": "0.0.6",
+      "gitref": "refs/tags/v0.0.6",
+      "url": "https://github.com/servo/servo/releases/tag/v0.0.6"
     }
   }
 }
