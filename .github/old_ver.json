@@ -13,5 +13,5 @@
   "dev-util/github-cli": "2.89.0",
   "dev-util/glab": "1.90.0",
   "dev-util/inspec": "5.24.7",
-  "www-client/servo": "0.0.6"
+  "www-client/servo": "0.0.5"
 }
