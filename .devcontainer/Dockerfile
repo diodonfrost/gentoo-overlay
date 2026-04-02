@@ -25,9 +25,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     vim \
     wget \
     zip \
-    zsh \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+    zsh
 
 RUN ansible-galaxy role install diodonfrost.ohmyzsh && \
     ansible-pull -U https://github.com/diodonfrost/ansible-role-ohmyzsh tests/test.yml -e "ohmyzsh_theme=powerlevel10k/powerlevel10k" -e '{"ohmyzsh_users": [vscode]}'
@@ -37,3 +35,6 @@ RUN ansible-galaxy role install diodonfrost.p10k && \
 
 RUN ansible-galaxy role install diodonfrost.just && \
     ansible-pull -U https://github.com/diodonfrost/ansible-role-just tests/test.yml
+
+RUN ansible-galaxy role install diodonfrost.act && \
+    ansible-pull -U https://github.com/diodonfrost/ansible-role-act tests/test.yml
