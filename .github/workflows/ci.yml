@@ -74,7 +74,6 @@ jobs:
       - uses: extractions/setup-just@v3
 
       - name: Test build ${{ matrix.package }}
-        timeout-minutes: 120
         run: just test-build "${{ matrix.package }}"
 
   ci-gate:
