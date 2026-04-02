@@ -22,9 +22,9 @@
       "url": "https://github.com/hashicorp/packer/releases/tag/v1.15.1"
     },
     "app-admin/pulumi": {
-      "version": "3.228.0",
-      "gitref": "refs/tags/v3.228.0",
-      "url": "https://github.com/pulumi/pulumi/releases/tag/v3.228.0"
+      "version": "3.229.0",
+      "gitref": "refs/tags/v3.229.0",
+      "url": "https://github.com/pulumi/pulumi/releases/tag/v3.229.0"
     },
     "app-admin/terraform": {
       "version": "1.14.8",
