@@ -11,7 +11,7 @@
   "dev-build/just": "1.49.0",
   "dev-node/bun-bin": "1.3.12",
   "dev-util/github-cli": "2.89.0",
-  "dev-util/glab": "1.92.0",
+  "dev-util/glab": "1.92.1",
   "dev-util/inspec": "5.24.7",
   "www-client/servo": "0.0.6"
 }
