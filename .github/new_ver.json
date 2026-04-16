@@ -12,9 +12,9 @@
       "url": "https://github.com/helm/helm/releases/tag/v4.1.4"
     },
     "app-admin/kubectl": {
-      "version": "1.35.3",
-      "gitref": "refs/tags/v1.35.3",
-      "url": "https://github.com/kubernetes/kubernetes/releases/tag/v1.35.3"
+      "version": "1.35.4",
+      "gitref": "refs/tags/v1.35.4",
+      "url": "https://github.com/kubernetes/kubernetes/releases/tag/v1.35.4"
     },
     "app-admin/packer": {
       "version": "1.15.1",

@@ -1,7 +1,7 @@
 {
   "app-accessibility/handy": "0.8.2",
   "app-admin/helm": "4.1.4",
-  "app-admin/kubectl": "1.35.3",
+  "app-admin/kubectl": "1.35.4",
   "app-admin/packer": "1.15.1",
   "app-admin/pulumi": "3.230.0",
   "app-admin/terraform": "1.14.8",
