@@ -22,9 +22,9 @@
       "url": "https://github.com/hashicorp/packer/releases/tag/v1.15.1"
     },
     "app-admin/pulumi": {
-      "version": "3.230.0",
-      "gitref": "refs/tags/v3.230.0",
-      "url": "https://github.com/pulumi/pulumi/releases/tag/v3.230.0"
+      "version": "3.231.0",
+      "gitref": "refs/tags/v3.231.0",
+      "url": "https://github.com/pulumi/pulumi/releases/tag/v3.231.0"
     },
     "app-admin/terraform": {
       "version": "1.14.8",
@@ -58,9 +58,9 @@
       "url": "https://github.com/oven-sh/bun/releases/tag/bun-v1.3.12"
     },
     "dev-util/github-cli": {
-      "version": "2.89.0",
-      "gitref": "refs/tags/v2.89.0",
-      "url": "https://github.com/cli/cli/releases/tag/v2.89.0"
+      "version": "2.90.0",
+      "gitref": "refs/tags/v2.90.0",
+      "url": "https://github.com/cli/cli/releases/tag/v2.90.0"
     },
     "dev-util/glab": {
       "version": "1.92.1",
