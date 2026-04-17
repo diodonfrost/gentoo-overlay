@@ -3,7 +3,9 @@
 
 EAPI=8
 
-inherit cargo xdg
+RUST_MIN_VER="1.86.0"
+
+inherit cargo desktop xdg
 
 DESCRIPTION="Lightweight, high-performance web browser engine written in Rust"
 HOMEPAGE="https://servo.org/ https://github.com/servo/servo"
@@ -17,7 +19,6 @@ KEYWORDS="~amd64"
 RESTRICT="network-sandbox test"
 
 BDEPEND="
-	>=dev-lang/rust-1.85.0
 	dev-build/cmake
 	dev-util/gperf
 	llvm-core/clang
@@ -66,12 +67,14 @@ src_compile() {
 
 src_install() {
 	# Install binary and resources to /opt/servo so servo can find
-	# its resources/ directory relative to the executable
+	# its resources/ directory relative to the executable.
+	# Upstream renamed the binary from "servo" to "servoshell" in 0.1.0;
+	# install it as /opt/servo/servo for a stable user-facing name.
 	exeinto /opt/servo
-	doexe target/release/servo
+	newexe target/release/servoshell servo
 
 	insinto /opt/servo/resources
-	doins resources/*
+	doins -r resources/*
 
 	dosym -r /opt/servo/servo /usr/bin/servo
 
