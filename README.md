@@ -30,3 +30,33 @@ emerge --sync diodonfrost
 | dev-util | [inspec](https://www.inspec.io) | Infrastructure compliance testing |
 | net-im | [discord-bin](https://discord.com) | Discord chat client (pre-built binary) |
 | www-client | [servo](https://servo.org) | Independent web rendering engine |
+
+## Testing Builds
+
+Ebuilds are tested inside a Gentoo stage3 Docker container, so you don't need a Gentoo host to contribute. The `justfile` wraps the Docker commands.
+
+### Prerequisites
+
+- [Docker](https://docs.docker.com/engine/install/)
+- [just](https://just.systems) (available in this overlay as `dev-build/just`)
+
+### Commands
+
+```bash
+just build                               # Build the Docker test image (Dockerfile.test)
+just test                                # Run pkgcheck QA lint (alias for test-lint)
+just test-lint                           # pkgcheck scan --net on the whole overlay
+just test-pretend <category/package-ver> # Dry-run emerge — resolves deps without building
+just test-build <category/package-ver>   # Full emerge of a single package
+just test-shell <category/package-ver>   # Emerge then drop into an interactive shell
+just test-shell                          # Shell only, for manual debugging
+just clean                               # Remove the Docker test image
+```
+
+The package argument is the exact `category/package-version` triple, without the `=` prefix (just adds it). Examples:
+
+```bash
+just test-pretend app-admin/helm-4.1.3
+just test-build dev-build/just-1.43.0
+just test-shell www-client/servo-0.1.0
+```
