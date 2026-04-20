@@ -53,9 +53,9 @@
       "url": "https://github.com/casey/just/releases/tag/1.50.0"
     },
     "dev-node/bun-bin": {
-      "version": "1.3.12",
-      "gitref": "refs/tags/bun-v1.3.12",
-      "url": "https://github.com/oven-sh/bun/releases/tag/bun-v1.3.12"
+      "version": "1.3.13",
+      "gitref": "refs/tags/bun-v1.3.13",
+      "url": "https://github.com/oven-sh/bun/releases/tag/bun-v1.3.13"
     },
     "dev-util/github-cli": {
       "version": "2.90.0",
