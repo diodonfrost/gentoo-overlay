@@ -118,6 +118,8 @@ jobs:
         uses: peter-evans/create-pull-request@v8
         with:
           token: ${{ steps.app-token-oldver.outputs.token }}
+          author: diodonfrost-bot-gentoo-overlay[bot] <270583476+diodonfrost-bot-gentoo-overlay[bot]@users.noreply.github.com>
+          committer: diodonfrost-bot-gentoo-overlay[bot] <270583476+diodonfrost-bot-gentoo-overlay[bot]@users.noreply.github.com>
           commit-message: "chore: update old_ver.json with latest upstream versions"
           branch: chore/update-old-ver
           title: "chore: update old_ver.json"
