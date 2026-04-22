@@ -73,7 +73,9 @@ src_compile() {
 src_install() {
 	dobin src-tauri/target/release/handy
 
-	insinto /usr/share/${PN}/resources
+	# Tauri resolves BaseDirectory::Resource to /usr/lib/<productName>/
+	# on Linux; productName in tauri.conf.json is "Handy" (case-sensitive).
+	insinto /usr/lib/Handy/resources
 	doins -r src-tauri/resources/*
 
 	newicon -s 32 src-tauri/icons/32x32.png handy.png
