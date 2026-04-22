@@ -12,9 +12,9 @@
       "url": "https://github.com/helm/helm/releases/tag/v4.1.4"
     },
     "app-admin/kubectl": {
-      "version": "1.35.4",
-      "gitref": "refs/tags/v1.35.4",
-      "url": "https://github.com/kubernetes/kubernetes/releases/tag/v1.35.4"
+      "version": "1.36.0",
+      "gitref": "refs/tags/v1.36.0",
+      "url": "https://github.com/kubernetes/kubernetes/releases/tag/v1.36.0"
     },
     "app-admin/packer": {
       "version": "1.15.1",
@@ -58,9 +58,9 @@
       "url": "https://github.com/oven-sh/bun/releases/tag/bun-v1.3.13"
     },
     "dev-util/github-cli": {
-      "version": "2.90.0",
-      "gitref": "refs/tags/v2.90.0",
-      "url": "https://github.com/cli/cli/releases/tag/v2.90.0"
+      "version": "2.91.0",
+      "gitref": "refs/tags/v2.91.0",
+      "url": "https://github.com/cli/cli/releases/tag/v2.91.0"
     },
     "dev-util/glab": {
       "version": "1.92.1",
