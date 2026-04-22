@@ -64,10 +64,15 @@ src_compile() {
 	npm run build || die "frontend build failed"
 
 	# Build the Rust binary directly instead of using tauri CLI bundler
-	# (tauri build -b deb is an anti-pattern in Gentoo ebuilds)
+	# (tauri build -b deb is an anti-pattern in Gentoo ebuilds).
+	# The tauri/custom-protocol feature is what the tauri CLI adds
+	# automatically on `tauri build`; without it the release binary
+	# still points at the dev server (devUrl) and the WebView stays
+	# blank because nothing is listening on localhost:1420.
 	export PKG_CONFIG_PATH="/usr/lib64/pkgconfig:/usr/share/pkgconfig"
 	cd src-tauri || die
-	cargo build --release || die "cargo build failed"
+	cargo build --release --features tauri/custom-protocol \
+		|| die "cargo build failed"
 }
 
 src_install() {
