@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>diodon.frost@diodonfrost.me</email>
+		<name>diodonfrost</name>
+	</maintainer>
+	<longdescription>
+		The Scaleway CLI (scw) is a command line tool that allows you
+		to manage Scaleway cloud resources directly from a terminal.
+		It provides an interface to instances, object storage, networking,
+		IAM, and other Scaleway services.
+	</longdescription>
+	<upstream>
+		<remote-id type="github">scaleway/scaleway-cli</remote-id>
+	</upstream>
+</pkgmetadata>

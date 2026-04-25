@@ -28,6 +28,12 @@ github = "pulumi/pulumi"
 use_latest_release = true
 prefix = "v"
 
+["app-admin/scaleway-cli"]
+source = "github"
+github = "scaleway/scaleway-cli"
+use_latest_release = true
+prefix = "v"
+
 ["app-admin/terraform"]
 source = "github"
 github = "hashicorp/terraform"
