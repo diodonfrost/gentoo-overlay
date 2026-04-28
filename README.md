@@ -19,6 +19,7 @@ emerge --sync diodonfrost
 | app-admin | [kubectl](https://kubernetes.io) | Kubernetes command-line tool |
 | app-admin | [packer](https://www.packer.io) | Automated machine image builder |
 | app-admin | [pulumi](https://www.pulumi.com) | Infrastructure as Code SDK |
+| app-admin | [scaleway-cli](https://www.scaleway.com) | Scaleway cloud platform CLI |
 | app-admin | [terraform](https://www.terraform.io) | Infrastructure as Code tool |
 | app-admin | [terragrunt](https://terragrunt.gruntwork.io) | Thin wrapper for Terraform |
 | app-admin | [vagrant](https://www.vagrantup.com) | Development environment manager |
