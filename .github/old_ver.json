@@ -5,7 +5,7 @@
   "app-admin/packer": "1.15.3",
   "app-admin/pulumi": "3.232.0",
   "app-admin/scaleway-cli": "2.55.0",
-  "app-admin/terraform": "1.14.9",
+  "app-admin/terraform": "1.15.0",
   "app-admin/terragrunt": "1.0.3",
   "app-admin/vagrant": "2.4.9",
   "app-crypt/sops": "3.12.2",

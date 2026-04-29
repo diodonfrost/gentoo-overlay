@@ -32,9 +32,9 @@
       "url": "https://github.com/scaleway/scaleway-cli/releases/tag/v2.55.0"
     },
     "app-admin/terraform": {
-      "version": "1.14.9",
-      "gitref": "refs/tags/v1.14.9",
-      "url": "https://github.com/hashicorp/terraform/releases/tag/v1.14.9"
+      "version": "1.15.0",
+      "gitref": "refs/tags/v1.15.0",
+      "url": "https://github.com/hashicorp/terraform/releases/tag/v1.15.0"
     },
     "app-admin/terragrunt": {
       "version": "1.0.3",
