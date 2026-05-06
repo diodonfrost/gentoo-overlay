@@ -5,14 +5,14 @@
   "app-admin/packer": "1.15.3",
   "app-admin/pulumi": "3.235.0",
   "app-admin/scaleway-cli": "2.55.0",
-  "app-admin/terraform": "1.15.1",
+  "app-admin/terraform": "1.15.2",
   "app-admin/terragrunt": "1.0.3",
   "app-admin/vagrant": "2.4.9",
   "app-crypt/sops": "3.12.2",
   "dev-build/just": "1.50.0",
   "dev-node/bun-bin": "1.3.13",
   "dev-util/github-cli": "2.92.0",
-  "dev-util/glab": "1.93.0",
+  "dev-util/glab": "1.94.0",
   "dev-util/inspec": "5.24.7",
   "www-client/servo": "0.1.0"
 }
