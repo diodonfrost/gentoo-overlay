@@ -32,9 +32,9 @@
       "url": "https://github.com/scaleway/scaleway-cli/releases/tag/v2.55.0"
     },
     "app-admin/terraform": {
-      "version": "1.15.1",
-      "gitref": "refs/tags/v1.15.1",
-      "url": "https://github.com/hashicorp/terraform/releases/tag/v1.15.1"
+      "version": "1.15.2",
+      "gitref": "refs/tags/v1.15.2",
+      "url": "https://github.com/hashicorp/terraform/releases/tag/v1.15.2"
     },
     "app-admin/terragrunt": {
       "version": "1.0.3",
@@ -68,9 +68,9 @@
       "url": "https://github.com/cli/cli/releases/tag/v2.92.0"
     },
     "dev-util/glab": {
-      "version": "1.93.0",
-      "revision": "a38e633f06ce696b8d70fe43b1e482d3dc5be3fb",
-      "url": "https://gitlab.com/gitlab-org/cli/-/tags/v1.93.0"
+      "version": "1.94.0",
+      "revision": "aa456f48555068e900b45b0b5451ce27125bef6c",
+      "url": "https://gitlab.com/gitlab-org/cli/-/tags/v1.94.0"
     },
     "dev-util/inspec": {
       "version": "5.24.7",
