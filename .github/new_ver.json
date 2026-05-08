@@ -47,9 +47,9 @@
       "url": "https://github.com/hashicorp/vagrant/releases/tag/v2.4.9"
     },
     "app-crypt/sops": {
-      "version": "3.12.2",
-      "gitref": "refs/tags/v3.12.2",
-      "url": "https://github.com/getsops/sops/releases/tag/v3.12.2"
+      "version": "3.13.0",
+      "gitref": "refs/tags/v3.13.0",
+      "url": "https://github.com/getsops/sops/releases/tag/v3.13.0"
     },
     "dev-build/just": {
       "version": "1.50.0",
@@ -68,9 +68,9 @@
       "url": "https://github.com/cli/cli/releases/tag/v2.92.0"
     },
     "dev-util/glab": {
-      "version": "1.94.0",
-      "revision": "aa456f48555068e900b45b0b5451ce27125bef6c",
-      "url": "https://gitlab.com/gitlab-org/cli/-/tags/v1.94.0"
+      "version": "1.95.0",
+      "revision": "6a2f207dd73796fb27873b9197bebbaf63e6fae2",
+      "url": "https://gitlab.com/gitlab-org/cli/-/tags/v1.95.0"
     },
     "dev-util/inspec": {
       "version": "5.24.7",
