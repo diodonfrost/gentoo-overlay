@@ -22,9 +22,9 @@
       "url": "https://github.com/hashicorp/packer/releases/tag/v1.15.3"
     },
     "app-admin/pulumi": {
-      "version": "3.236.0",
-      "gitref": "refs/tags/v3.236.0",
-      "url": "https://github.com/pulumi/pulumi/releases/tag/v3.236.0"
+      "version": "3.237.0",
+      "gitref": "refs/tags/v3.237.0",
+      "url": "https://github.com/pulumi/pulumi/releases/tag/v3.237.0"
     },
     "app-admin/scaleway-cli": {
       "version": "2.55.0",
