@@ -58,9 +58,9 @@
       "url": "https://github.com/casey/just/releases/tag/1.51.0"
     },
     "dev-node/bun-bin": {
-      "version": "1.3.13",
-      "gitref": "refs/tags/bun-v1.3.13",
-      "url": "https://github.com/oven-sh/bun/releases/tag/bun-v1.3.13"
+      "version": "1.3.14",
+      "gitref": "refs/tags/bun-v1.3.14",
+      "url": "https://github.com/oven-sh/bun/releases/tag/bun-v1.3.14"
     },
     "dev-util/github-cli": {
       "version": "2.92.0",
@@ -68,9 +68,9 @@
       "url": "https://github.com/cli/cli/releases/tag/v2.92.0"
     },
     "dev-util/glab": {
-      "version": "1.96.0",
-      "revision": "c251988c830c487395e3fa14589782cdbe5a4aea",
-      "url": "https://gitlab.com/gitlab-org/cli/-/tags/v1.96.0"
+      "version": "1.97.0",
+      "revision": "3804f048b9c0df42b793c907d5159352fd86312a",
+      "url": "https://gitlab.com/gitlab-org/cli/-/tags/v1.97.0"
     },
     "dev-util/inspec": {
       "version": "5.24.7",

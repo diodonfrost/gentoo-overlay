@@ -10,9 +10,9 @@
   "app-admin/vagrant": "2.4.9",
   "app-crypt/sops": "3.13.0",
   "dev-build/just": "1.51.0",
-  "dev-node/bun-bin": "1.3.13",
+  "dev-node/bun-bin": "1.3.14",
   "dev-util/github-cli": "2.92.0",
-  "dev-util/glab": "1.96.0",
+  "dev-util/glab": "1.97.0",
   "dev-util/inspec": "5.24.7",
   "www-client/servo": "0.1.0"
 }
