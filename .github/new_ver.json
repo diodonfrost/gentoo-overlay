@@ -22,9 +22,9 @@
       "url": "https://github.com/hashicorp/packer/releases/tag/v1.15.3"
     },
     "app-admin/pulumi": {
-      "version": "3.239.0",
-      "gitref": "refs/tags/v3.239.0",
-      "url": "https://github.com/pulumi/pulumi/releases/tag/v3.239.0"
+      "version": "3.241.0",
+      "gitref": "refs/tags/v3.241.0",
+      "url": "https://github.com/pulumi/pulumi/releases/tag/v3.241.0"
     },
     "app-admin/scaleway-cli": {
       "version": "2.55.0",
@@ -37,9 +37,9 @@
       "url": "https://github.com/hashicorp/terraform/releases/tag/v1.15.3"
     },
     "app-admin/terragrunt": {
-      "version": "1.0.4",
-      "gitref": "refs/tags/v1.0.4",
-      "url": "https://github.com/gruntwork-io/terragrunt/releases/tag/v1.0.4"
+      "version": "1.0.5",
+      "gitref": "refs/tags/v1.0.5",
+      "url": "https://github.com/gruntwork-io/terragrunt/releases/tag/v1.0.5"
     },
     "app-admin/vagrant": {
       "version": "2.4.9",
