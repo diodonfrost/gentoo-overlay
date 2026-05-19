@@ -22,14 +22,14 @@
       "url": "https://github.com/hashicorp/packer/releases/tag/v1.15.3"
     },
     "app-admin/pulumi": {
-      "version": "3.241.0",
-      "gitref": "refs/tags/v3.241.0",
-      "url": "https://github.com/pulumi/pulumi/releases/tag/v3.241.0"
+      "version": "3.242.0",
+      "gitref": "refs/tags/v3.242.0",
+      "url": "https://github.com/pulumi/pulumi/releases/tag/v3.242.0"
     },
     "app-admin/scaleway-cli": {
-      "version": "2.55.0",
-      "gitref": "refs/tags/v2.55.0",
-      "url": "https://github.com/scaleway/scaleway-cli/releases/tag/v2.55.0"
+      "version": "2.56.0",
+      "gitref": "refs/tags/v2.56.0",
+      "url": "https://github.com/scaleway/scaleway-cli/releases/tag/v2.56.0"
     },
     "app-admin/terraform": {
       "version": "1.15.3",
