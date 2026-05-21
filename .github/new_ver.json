@@ -68,9 +68,9 @@
       "url": "https://github.com/cli/cli/releases/tag/v2.92.0"
     },
     "dev-util/glab": {
-      "version": "1.98.0",
-      "revision": "36808cfefffa6ac21d546cf86eab1f137b282014",
-      "url": "https://gitlab.com/gitlab-org/cli/-/tags/v1.98.0"
+      "version": "1.99.0",
+      "revision": "a9ab75a4c2ecd10570ea50d5ee35dfe09dfa5a59",
+      "url": "https://gitlab.com/gitlab-org/cli/-/tags/v1.99.0"
     },
     "dev-util/inspec": {
       "version": "5.24.7",
