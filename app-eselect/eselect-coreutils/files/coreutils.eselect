@@ -4,45 +4,30 @@
 
 DESCRIPTION="Manage the system-wide coreutils provider (GNU vs uutils)"
 MAINTAINER="diodon.frost@diodonfrost.me"
-VERSION="0.1.0"
+VERSION="0.3.0"
 
-# Directory where the chosen provider's symlinks are materialized.
-# Users add this directory ahead of /usr/bin in PATH to take effect.
-ESELECT_COREUTILS_BINDIR="/usr/local/lib/eselect-coreutils/bin"
+# /usr/local/bin sits ahead of /usr/bin in the default Gentoo PATH, so
+# symlinks created here transparently override the matching /usr/bin/<util>
+# for every shell, sudo session, cron job, and systemd unit using the
+# standard system PATH — no PATH editing or relogin required.
+OVERRIDE_DIR="/usr/local/bin"
 
 # File recording the currently active provider.
-ESELECT_COREUTILS_STATE="/var/lib/eselect-coreutils/active"
+STATE_FILE="/var/lib/eselect-coreutils/active"
 
 # Known providers, in display order.
 PROVIDERS=( gnu uutils )
 
-# Commands the module knows about. Commands whose backing binary does not
-# exist for the selected provider are skipped silently at set time, so this
-# list can stay broad without breaking on systems where uutils ships fewer
-# applets (hostname, kill, uptime, groups, etc. are not always present).
-COREUTILS_COMMANDS=(
-	arch b2sum b3sum base32 base64 basename basenc cat chcon chgrp chmod
-	chown chroot cksum comm cp csplit cut date dd df dir dircolors dirname
-	du echo env expand expr factor false fmt fold groups hashsum head
-	hostid hostname id install join kill link ln logname ls md5sum mkdir
-	mkfifo mknod mktemp more mv nice nl nohup nproc numfmt od paste
-	pathchk pinky pr printenv printf ptx pwd readlink realpath rm rmdir
-	runcon seq sha1sum sha224sum sha256sum sha384sum sha512sum shred shuf
-	sleep sort split stat stdbuf stty sum sync tac tail tee test timeout
-	touch tr true truncate tsort tty uname unexpand uniq unlink uptime
-	users vdir wc who whoami yes
-)
-
-# Return the currently active provider name, or empty string.
+# Read the active provider name from the state file, or "" if unset.
 get_active_provider() {
-	local state="${EROOT}${ESELECT_COREUTILS_STATE}"
+	local state="${EROOT}${STATE_FILE}"
 	[[ -r ${state} ]] && < "${state}" tr -d '[:space:]'
 }
 
-# Persist the active provider name to the state file.
+# Persist the active provider name.
 set_active_provider() {
 	local provider=$1
-	local state="${EROOT}${ESELECT_COREUTILS_STATE}"
+	local state="${EROOT}${STATE_FILE}"
 	local state_dir="${state%/*}"
 	[[ -d ${state_dir} ]] || mkdir -p "${state_dir}" \
 		|| die -q "Cannot create ${state_dir}"
@@ -50,55 +35,77 @@ set_active_provider() {
 		|| die -q "Cannot write ${state}"
 }
 
-# Resolve the absolute target for a (provider, util) pair, or empty if the
-# provider does not ship that command on this system.
-provider_target() {
-	local provider=$1 util=$2
-	case ${provider} in
-		gnu)
-			[[ -x ${EROOT}/usr/bin/${util} ]] \
-				&& echo "/usr/bin/${util}"
-			;;
-		uutils)
-			[[ -x ${EROOT}/usr/bin/uu-${util} ]] \
-				&& echo "/usr/bin/uu-${util}"
-			;;
-	esac
+clear_active_provider() {
+	local state="${EROOT}${STATE_FILE}"
+	[[ -e ${state} ]] && { rm -f "${state}" || die -q "Cannot remove ${state}"; }
 }
 
-# Refresh the dispatch bindir with symlinks for the given provider.
-apply_provider() {
-	local provider=$1
-	local bindir="${EROOT}${ESELECT_COREUTILS_BINDIR}"
+# A symlink we manage points to /usr/bin/uu-<basename>.
+is_managed_symlink() {
+	local link=$1
+	[[ -L ${link} ]] || return 1
+	local target name
+	target=$(readlink "${link}") || return 1
+	name=${link##*/}
+	[[ ${target} == "/usr/bin/uu-${name}" ]]
+}
 
-	if [[ -d ${bindir} ]]; then
-		# Only remove symlinks; leave anything else the admin put there.
-		find "${bindir}" -maxdepth 1 -type l -delete \
-			|| die -q "Cannot prune stale symlinks in ${bindir}"
-	else
-		mkdir -p "${bindir}" || die -q "Cannot create ${bindir}"
-	fi
+# Drop every symlink in OVERRIDE_DIR that points into /usr/bin/uu-*.
+# Files we did not create are left untouched. /bin/rm is used by
+# absolute path to avoid bash's command-hash holding a stale entry
+# for /usr/local/bin/rm after we just removed that very symlink.
+remove_managed_symlinks() {
+	local dir="${EROOT}${OVERRIDE_DIR}"
+	local link target
+	[[ -d ${dir} ]] || return 0
+	while IFS= read -r -d '' link; do
+		target=$(readlink "${link}") || continue
+		[[ ${target} == /usr/bin/uu-* ]] || continue
+		/bin/rm -f "${link}" || die -q "Cannot remove ${link}"
+	done < <(find "${dir}" -maxdepth 1 -type l -print0)
+}
 
-	local util target skipped=() linked=0
-	for util in "${COREUTILS_COMMANDS[@]}"; do
-		target=$(provider_target "${provider}" "${util}")
-		if [[ -n ${target} ]]; then
-			ln -s "${target}" "${bindir}/${util}" \
-				|| die -q "Cannot link ${util} -> ${target}"
-			linked=$(( linked + 1 ))
-		else
-			skipped+=( "${util}" )
+# Auto-discover /usr/bin/uu-* and link each into OVERRIDE_DIR, refusing
+# to clobber anything that is not already one of our managed symlinks.
+install_uutils_overrides() {
+	local dir="${EROOT}${OVERRIDE_DIR}"
+	[[ -d ${dir} ]] || mkdir -p "${dir}" || die -q "Cannot create ${dir}"
+
+	# Prune stale managed symlinks first (e.g. utils uutils dropped
+	# between upgrades) so we never leave dangling overrides behind.
+	remove_managed_symlinks
+
+	local target util link
+	local -a linked=() refused=()
+
+	for target in "${EROOT}"/usr/bin/uu-*; do
+		[[ -x ${target} ]] || continue
+		util=${target##*/uu-}
+		link="${dir}/${util}"
+
+		if [[ -e ${link} || -L ${link} ]] && ! is_managed_symlink "${link}"; then
+			refused+=( "${util}" )
+			continue
 		fi
+
+		/bin/ln -sf "/usr/bin/uu-${util}" "${link}" \
+			|| die -q "Cannot link ${link} -> /usr/bin/uu-${util}"
+		linked+=( "${util}" )
 	done
 
-	write_kv_list_entry "linked"  "${linked}"
-	write_kv_list_entry "bindir"  "${ESELECT_COREUTILS_BINDIR}"
-	if [[ ${#skipped[@]} -gt 0 ]]; then
-		write_kv_list_entry "skipped" "${skipped[*]}"
+	if [[ ${#linked[@]} -eq 0 ]]; then
+		die -q "No /usr/bin/uu-* binaries found. Install sys-apps/uutils-coreutils first."
+	fi
+
+	write_kv_list_entry "linked" "${#linked[@]}"
+	write_kv_list_entry "dir"    "${OVERRIDE_DIR}"
+	if [[ ${#refused[@]} -gt 0 ]]; then
+		write_kv_list_entry "refused" "${refused[*]}"
+		write_warning_msg \
+			"Refused to overwrite non-managed files in ${OVERRIDE_DIR}: ${refused[*]}"
 	fi
 }
 
-# Verify the candidate is one of the known providers.
 validate_provider() {
 	local candidate=$1 p
 	for p in "${PROVIDERS[@]}"; do
@@ -178,31 +185,31 @@ do_set() {
 		|| die -q "Unknown provider: ${provider} (known: ${PROVIDERS[*]})"
 
 	write_list_start "Activating coreutils provider: $(highlight "${provider}")"
-	apply_provider "${provider}"
-	set_active_provider "${provider}"
 
-	echo
-	write_warning_msg \
-		"Ensure ${ESELECT_COREUTILS_BINDIR} appears in PATH before /usr/bin for the choice to take effect."
+	case ${provider} in
+		gnu)
+			# GNU lives at /usr/bin and is the system default. Removing
+			# our overrides lets PATH resolution fall through to it.
+			remove_managed_symlinks
+			write_kv_list_entry "dir"  "${OVERRIDE_DIR}"
+			write_kv_list_entry "note" "overrides removed; /usr/bin (GNU) wins via PATH"
+			;;
+		uutils)
+			install_uutils_overrides
+			;;
+	esac
+
+	set_active_provider "${provider}"
 }
 
 ### unset action ###
 
 describe_unset() {
-	echo "Remove all dispatch symlinks and clear the active provider"
+	echo "Remove all overrides and clear the active provider"
 }
 
 do_unset() {
-	local bindir="${EROOT}${ESELECT_COREUTILS_BINDIR}"
-	local state="${EROOT}${ESELECT_COREUTILS_STATE}"
-
-	if [[ -d ${bindir} ]]; then
-		find "${bindir}" -maxdepth 1 -type l -delete \
-			|| die -q "Cannot prune symlinks in ${bindir}"
-	fi
-	if [[ -e ${state} ]]; then
-		rm -f "${state}" || die -q "Cannot remove ${state}"
-	fi
-
-	write_list_start "coreutils provider unset"
+	remove_managed_symlinks
+	clear_active_provider
+	write_list_start "coreutils overrides removed"
 }
