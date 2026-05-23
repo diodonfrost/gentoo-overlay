@@ -24,6 +24,7 @@ emerge --sync diodonfrost
 | app-admin | [terragrunt](https://terragrunt.gruntwork.io) | Thin wrapper for Terraform |
 | app-admin | [vagrant](https://www.vagrantup.com) | Development environment manager |
 | app-crypt | [sops](https://github.com/getsops/sops) | Encrypted file editor for secrets |
+| app-eselect | [eselect-coreutils](app-eselect/eselect-coreutils) | Switch the system coreutils provider between GNU and uutils |
 | dev-build | [just](https://just.systems) | Command runner (alternative to Make) |
 | dev-node | [bun-bin](https://bun.sh) | JavaScript runtime and toolkit (pre-built binary) |
 | dev-util | [github-cli](https://cli.github.com) | GitHub CLI |

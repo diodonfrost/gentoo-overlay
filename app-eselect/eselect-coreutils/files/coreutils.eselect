@@ -1,0 +1,187 @@
+# -*-eselect-*-  vim: ft=eselect
+# Copyright 1999-2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+DESCRIPTION="Manage the system-wide coreutils provider (GNU vs uutils)"
+MAINTAINER="diodon.frost@diodonfrost.me"
+VERSION="0.1.0"
+
+# Directory where the chosen provider's symlinks are materialized.
+# Users add this directory ahead of /usr/bin in PATH to take effect.
+ESELECT_COREUTILS_BINDIR="/usr/local/lib/eselect-coreutils/bin"
+
+# File recording the currently active provider.
+ESELECT_COREUTILS_STATE="/var/lib/eselect-coreutils/active"
+
+# Known providers, in display order.
+PROVIDERS=( gnu uutils )
+
+# Commands the module knows about. Commands whose backing binary does not
+# exist for the selected provider are skipped silently at set time, so this
+# list can stay broad without breaking on systems where uutils ships fewer
+# applets (hostname, kill, uptime, groups, etc. are not always present).
+COREUTILS_COMMANDS=(
+	arch b2sum b3sum base32 base64 basename basenc cat chcon chgrp chmod
+	chown chroot cksum comm cp csplit cut date dd df dir dircolors dirname
+	du echo env expand expr factor false fmt fold groups hashsum head
+	hostid hostname id install join kill link ln logname ls md5sum mkdir
+	mkfifo mknod mktemp more mv nice nl nohup nproc numfmt od paste
+	pathchk pinky pr printenv printf ptx pwd readlink realpath rm rmdir
+	runcon seq sha1sum sha224sum sha256sum sha384sum sha512sum shred shuf
+	sleep sort split stat stdbuf stty sum sync tac tail tee test timeout
+	touch tr true truncate tsort tty uname unexpand uniq unlink uptime
+	users vdir wc who whoami yes
+)
+
+# Return the currently active provider name, or empty string.
+get_active_provider() {
+	local state="${EROOT}${ESELECT_COREUTILS_STATE}"
+	[[ -r ${state} ]] && < "${state}" tr -d '[:space:]'
+}
+
+# Persist the active provider name to the state file.
+set_active_provider() {
+	local provider=$1
+	local state="${EROOT}${ESELECT_COREUTILS_STATE}"
+	local state_dir="${state%/*}"
+	[[ -d ${state_dir} ]] || mkdir -p "${state_dir}" \
+		|| die -q "Cannot create ${state_dir}"
+	echo "${provider}" > "${state}" \
+		|| die -q "Cannot write ${state}"
+}
+
+# Resolve the absolute target for a (provider, util) pair, or empty if the
+# provider does not ship that command on this system.
+provider_target() {
+	local provider=$1 util=$2
+	case ${provider} in
+		gnu)
+			[[ -x ${EROOT}/usr/bin/${util} ]] \
+				&& echo "/usr/bin/${util}"
+			;;
+		uutils)
+			[[ -x ${EROOT}/usr/bin/uu-${util} ]] \
+				&& echo "/usr/bin/uu-${util}"
+			;;
+	esac
+}
+
+# Refresh the dispatch bindir with symlinks for the given provider.
+apply_provider() {
+	local provider=$1
+	local bindir="${EROOT}${ESELECT_COREUTILS_BINDIR}"
+
+	if [[ -d ${bindir} ]]; then
+		# Only remove symlinks; leave anything else the admin put there.
+		find "${bindir}" -maxdepth 1 -type l -delete \
+			|| die -q "Cannot prune stale symlinks in ${bindir}"
+	else
+		mkdir -p "${bindir}" || die -q "Cannot create ${bindir}"
+	fi
+
+	local util target skipped=() linked=0
+	for util in "${COREUTILS_COMMANDS[@]}"; do
+		target=$(provider_target "${provider}" "${util}")
+		if [[ -n ${target} ]]; then
+			ln -s "${target}" "${bindir}/${util}" \
+				|| die -q "Cannot link ${util} -> ${target}"
+			linked=$(( linked + 1 ))
+		else
+			skipped+=( "${util}" )
+		fi
+	done
+
+	write_kv_list_entry "linked"  "${linked}"
+	write_kv_list_entry "bindir"  "${ESELECT_COREUTILS_BINDIR}"
+	if [[ ${#skipped[@]} -gt 0 ]]; then
+		write_kv_list_entry "skipped" "${skipped[*]}"
+	fi
+}
+
+# Verify the candidate is one of the known providers.
+validate_provider() {
+	local candidate=$1 p
+	for p in "${PROVIDERS[@]}"; do
+		[[ ${p} == "${candidate}" ]] && return 0
+	done
+	return 1
+}
+
+### list action ###
+
+describe_list() {
+	echo "List available coreutils providers"
+}
+
+do_list() {
+	local active provider marked i=0
+	active=$(get_active_provider)
+
+	write_list_start "Available coreutils providers:"
+	for provider in "${PROVIDERS[@]}"; do
+		if [[ ${provider} == "${active}" ]]; then
+			marked=$(highlight_marker "${provider}")
+		else
+			marked=${provider}
+		fi
+		: $(( i++ ))
+		write_numbered_list_entry "${i}" "${marked}"
+	done
+}
+
+### show action ###
+
+describe_show() {
+	echo "Show the active coreutils provider"
+}
+
+do_show() {
+	local active
+	active=$(get_active_provider)
+	if [[ -n ${active} ]]; then
+		echo "${active}"
+		return 0
+	fi
+	echo "(unset)"
+	return 1
+}
+
+### set action ###
+
+describe_set() {
+	echo "Activate a coreutils provider"
+}
+
+describe_set_parameters() {
+	echo "<provider>"
+}
+
+describe_set_options() {
+	echo "provider : provider name (${PROVIDERS[*]}) or its list index"
+}
+
+do_set() {
+	[[ $# -eq 1 ]] \
+		|| die -q "Usage: eselect coreutils set <provider>"
+
+	local target=$1 provider
+
+	if is_number "${target}"; then
+		provider=${PROVIDERS[$(( target - 1 ))]}
+		[[ -n ${provider} ]] \
+			|| die -q "Index out of range: ${target}"
+	else
+		provider=${target}
+	fi
+
+	validate_provider "${provider}" \
+		|| die -q "Unknown provider: ${provider} (known: ${PROVIDERS[*]})"
+
+	write_list_start "Activating coreutils provider: $(highlight "${provider}")"
+	apply_provider "${provider}"
+	set_active_provider "${provider}"
+
+	echo
+	write_warning_msg \
+		"Ensure ${ESELECT_COREUTILS_BINDIR} appears in PATH before /usr/bin for the choice to take effect."
+}

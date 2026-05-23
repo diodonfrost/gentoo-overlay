@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>diodon.frost@diodonfrost.me</email>
+		<name>diodonfrost</name>
+	</maintainer>
+	<longdescription>
+		An eselect module that lets the administrator switch the system's
+		coreutils provider between GNU coreutils (sys-apps/coreutils) and
+		the Rust uutils reimplementation (sys-apps/uutils-coreutils). It
+		manages a dispatch directory of symlinks that, when placed ahead
+		of /usr/bin in PATH, transparently routes the standard coreutils
+		commands to the selected provider.
+	</longdescription>
+	<upstream>
+		<remote-id type="github">diodonfrost/gentoo-overlay</remote-id>
+	</upstream>
+</pkgmetadata>
