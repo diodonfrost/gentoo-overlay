@@ -185,3 +185,24 @@ do_set() {
 	write_warning_msg \
 		"Ensure ${ESELECT_COREUTILS_BINDIR} appears in PATH before /usr/bin for the choice to take effect."
 }
+
+### unset action ###
+
+describe_unset() {
+	echo "Remove all dispatch symlinks and clear the active provider"
+}
+
+do_unset() {
+	local bindir="${EROOT}${ESELECT_COREUTILS_BINDIR}"
+	local state="${EROOT}${ESELECT_COREUTILS_STATE}"
+
+	if [[ -d ${bindir} ]]; then
+		find "${bindir}" -maxdepth 1 -type l -delete \
+			|| die -q "Cannot prune symlinks in ${bindir}"
+	fi
+	if [[ -e ${state} ]]; then
+		rm -f "${state}" || die -q "Cannot remove ${state}"
+	fi
+
+	write_list_start "coreutils provider unset"
+}

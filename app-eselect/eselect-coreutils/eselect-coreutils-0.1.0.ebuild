@@ -16,13 +16,32 @@ RDEPEND="app-admin/eselect"
 src_install() {
 	insinto /usr/share/eselect/modules
 	doins "${FILESDIR}/coreutils.eselect"
+
+	# Prepend the dispatch dir to PATH for login shells. /etc/env.d/
+	# would only append, leaving /usr/bin ahead — defeating the point.
+	insinto /etc/profile.d
+	doins "${FILESDIR}/eselect-coreutils.sh"
 }
 
 pkg_postinst() {
-	elog "Choose a provider with:"
-	elog "    eselect coreutils set <gnu|uutils>"
+	# Populate the dispatch directory on first install so the system
+	# keeps a working ls/cat/... before the admin picks a provider.
+	if [[ -z ${REPLACING_VERSIONS} && ! -e ${EROOT}/var/lib/eselect-coreutils/active ]]; then
+		eselect coreutils set gnu
+	fi
+
 	elog ""
-	elog "Then prepend the dispatch directory to PATH so the choice"
-	elog "takes precedence over /usr/bin, e.g. in your shell rc:"
-	elog "    export PATH=\"/usr/local/lib/eselect-coreutils/bin:\${PATH}\""
+	elog "Switch the active coreutils provider with:"
+	elog "    eselect coreutils set uutils   # Rust uutils-coreutils"
+	elog "    eselect coreutils set gnu      # GNU coreutils (default)"
+	elog ""
+	elog "Open a new login shell (or run 'source /etc/profile') once"
+	elog "so the /etc/profile.d/eselect-coreutils.sh PATH entry takes effect."
+}
+
+pkg_prerm() {
+	# Clean up dispatch symlinks and state on real removal, not upgrades.
+	if [[ -z ${REPLACED_BY_VERSION} ]]; then
+		eselect coreutils unset 2>/dev/null
+	fi
 }
