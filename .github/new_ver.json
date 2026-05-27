@@ -32,9 +32,9 @@
       "url": "https://github.com/scaleway/scaleway-cli/releases/tag/v2.56.1"
     },
     "app-admin/terraform": {
-      "version": "1.15.4",
-      "gitref": "refs/tags/v1.15.4",
-      "url": "https://github.com/hashicorp/terraform/releases/tag/v1.15.4"
+      "version": "1.15.5",
+      "gitref": "refs/tags/v1.15.5",
+      "url": "https://github.com/hashicorp/terraform/releases/tag/v1.15.5"
     },
     "app-admin/terragrunt": {
       "version": "1.0.6",
@@ -63,14 +63,14 @@
       "url": "https://github.com/oven-sh/bun/releases/tag/bun-v1.3.14"
     },
     "dev-util/github-cli": {
-      "version": "2.92.0",
-      "gitref": "refs/tags/v2.92.0",
-      "url": "https://github.com/cli/cli/releases/tag/v2.92.0"
+      "version": "2.93.0",
+      "gitref": "refs/tags/v2.93.0",
+      "url": "https://github.com/cli/cli/releases/tag/v2.93.0"
     },
     "dev-util/glab": {
-      "version": "1.99.0",
-      "revision": "a9ab75a4c2ecd10570ea50d5ee35dfe09dfa5a59",
-      "url": "https://gitlab.com/gitlab-org/cli/-/tags/v1.99.0"
+      "version": "1.100.0",
+      "revision": "e345ca679f612b4990175d6e33839ba864bb02d2",
+      "url": "https://gitlab.com/gitlab-org/cli/-/tags/v1.100.0"
     },
     "dev-util/inspec": {
       "version": "5.24.7",
