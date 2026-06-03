@@ -17,9 +17,9 @@
       "url": "https://github.com/kubernetes/kubernetes/releases/tag/v1.36.1"
     },
     "app-admin/packer": {
-      "version": "1.15.3",
-      "gitref": "refs/tags/v1.15.3",
-      "url": "https://github.com/hashicorp/packer/releases/tag/v1.15.3"
+      "version": "1.15.4",
+      "gitref": "refs/tags/v1.15.4",
+      "url": "https://github.com/hashicorp/packer/releases/tag/v1.15.4"
     },
     "app-admin/pulumi": {
       "version": "3.244.0",
