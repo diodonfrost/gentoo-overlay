@@ -52,10 +52,10 @@
       "url": "https://github.com/getsops/sops/releases/tag/v3.13.1"
     },
     "dev-build/just": {
-      "version": "1.51.0",
-      "gitref": "refs/tags/1.51.0",
-      "revision": "6bda269116363e8501f84bb296c7ec47e4ee06ad",
-      "url": "https://github.com/casey/just/releases/tag/1.51.0"
+      "version": "1.52.0",
+      "gitref": "refs/tags/1.52.0",
+      "revision": "f41d35750fcd786c711d08bc0182a2909499e74e",
+      "url": "https://github.com/casey/just/releases/tag/1.52.0"
     },
     "dev-node/bun-bin": {
       "version": "1.3.14",
