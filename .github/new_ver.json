@@ -27,14 +27,14 @@
       "url": "https://github.com/pulumi/pulumi/releases/tag/v3.245.0"
     },
     "app-admin/scaleway-cli": {
-      "version": "2.56.1",
-      "gitref": "refs/tags/v2.56.1",
-      "url": "https://github.com/scaleway/scaleway-cli/releases/tag/v2.56.1"
+      "version": "2.56.3",
+      "gitref": "refs/tags/v2.56.3",
+      "url": "https://github.com/scaleway/scaleway-cli/releases/tag/v2.56.3"
     },
     "app-admin/terraform": {
-      "version": "1.15.5",
-      "gitref": "refs/tags/v1.15.5",
-      "url": "https://github.com/hashicorp/terraform/releases/tag/v1.15.5"
+      "version": "1.15.6",
+      "gitref": "refs/tags/v1.15.6",
+      "url": "https://github.com/hashicorp/terraform/releases/tag/v1.15.6"
     },
     "app-admin/terragrunt": {
       "version": "1.0.7",
