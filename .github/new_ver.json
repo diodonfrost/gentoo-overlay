@@ -37,9 +37,9 @@
       "url": "https://github.com/hashicorp/terraform/releases/tag/v1.15.6"
     },
     "app-admin/terragrunt": {
-      "version": "1.0.7",
-      "gitref": "refs/tags/v1.0.7",
-      "url": "https://github.com/gruntwork-io/terragrunt/releases/tag/v1.0.7"
+      "version": "1.0.8",
+      "gitref": "refs/tags/v1.0.8",
+      "url": "https://github.com/gruntwork-io/terragrunt/releases/tag/v1.0.8"
     },
     "app-admin/vagrant": {
       "version": "2.4.9",
@@ -63,9 +63,9 @@
       "url": "https://github.com/oven-sh/bun/releases/tag/bun-v1.3.14"
     },
     "dev-util/github-cli": {
-      "version": "2.93.0",
-      "gitref": "refs/tags/v2.93.0",
-      "url": "https://github.com/cli/cli/releases/tag/v2.93.0"
+      "version": "2.94.0",
+      "gitref": "refs/tags/v2.94.0",
+      "url": "https://github.com/cli/cli/releases/tag/v2.94.0"
     },
     "dev-util/glab": {
       "version": "1.102.0",
