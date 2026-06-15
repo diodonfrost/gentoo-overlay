@@ -27,9 +27,9 @@
       "url": "https://github.com/pulumi/pulumi/releases/tag/v3.246.0"
     },
     "app-admin/scaleway-cli": {
-      "version": "2.56.3",
-      "gitref": "refs/tags/v2.56.3",
-      "url": "https://github.com/scaleway/scaleway-cli/releases/tag/v2.56.3"
+      "version": "2.57.0",
+      "gitref": "refs/tags/v2.57.0",
+      "url": "https://github.com/scaleway/scaleway-cli/releases/tag/v2.57.0"
     },
     "app-admin/terraform": {
       "version": "1.15.6",
