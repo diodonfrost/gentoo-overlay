@@ -52,10 +52,10 @@
       "url": "https://github.com/getsops/sops/releases/tag/v3.13.1"
     },
     "dev-build/just": {
-      "version": "1.52.0",
-      "gitref": "refs/tags/1.52.0",
-      "revision": "f41d35750fcd786c711d08bc0182a2909499e74e",
-      "url": "https://github.com/casey/just/releases/tag/1.52.0"
+      "version": "1.53.0",
+      "gitref": "refs/tags/1.53.0",
+      "revision": "41e7321345472555caa617ba5b36100abe407c46",
+      "url": "https://github.com/casey/just/releases/tag/1.53.0"
     },
     "dev-node/bun-bin": {
       "version": "1.3.14",
@@ -68,9 +68,9 @@
       "url": "https://github.com/cli/cli/releases/tag/v2.94.0"
     },
     "dev-util/glab": {
-      "version": "1.102.0",
-      "revision": "b5a548b340b302bbe0b8828b103a9ef0433d3201",
-      "url": "https://gitlab.com/gitlab-org/cli/-/tags/v1.102.0"
+      "version": "1.103.0",
+      "revision": "c724bea5fca299c989b0b27b2b24cd1cbe7136af",
+      "url": "https://gitlab.com/gitlab-org/cli/-/tags/v1.103.0"
     },
     "dev-util/inspec": {
       "version": "5.24.7",
