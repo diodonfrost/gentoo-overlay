@@ -73,14 +73,14 @@
       "url": "https://gitlab.com/gitlab-org/cli/-/tags/v1.105.0"
     },
     "dev-util/inspec": {
-      "version": "5.24.7",
-      "gitref": "refs/tags/v5.24.7",
-      "url": "https://github.com/inspec/inspec/releases/tag/v5.24.7"
+      "version": "5.24.24",
+      "gitref": "refs/tags/v5.24.24",
+      "url": "https://github.com/inspec/inspec/releases/tag/v5.24.24"
     },
     "www-client/servo": {
-      "version": "0.2.0",
-      "gitref": "refs/tags/v0.2.0",
-      "url": "https://github.com/servo/servo/releases/tag/v0.2.0"
+      "version": "0.3.0",
+      "gitref": "refs/tags/v0.3.0",
+      "url": "https://github.com/servo/servo/releases/tag/v0.3.0"
     }
   }
 }
