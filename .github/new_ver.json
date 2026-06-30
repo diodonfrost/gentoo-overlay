@@ -47,15 +47,15 @@
       "url": "https://github.com/hashicorp/vagrant/releases/tag/v2.4.9"
     },
     "app-crypt/sops": {
-      "version": "3.13.1",
-      "gitref": "refs/tags/v3.13.1",
-      "url": "https://github.com/getsops/sops/releases/tag/v3.13.1"
+      "version": "3.13.2",
+      "gitref": "refs/tags/v3.13.2",
+      "url": "https://github.com/getsops/sops/releases/tag/v3.13.2"
     },
     "dev-build/just": {
-      "version": "1.54.0",
-      "gitref": "refs/tags/1.54.0",
-      "revision": "6c134089465461e466bbb72843096b4215d786c9",
-      "url": "https://github.com/casey/just/releases/tag/1.54.0"
+      "version": "1.55.1",
+      "gitref": "refs/tags/1.55.1",
+      "revision": "73089009aebf1f90a7260068c984864de482eaad",
+      "url": "https://github.com/casey/just/releases/tag/1.55.1"
     },
     "dev-node/bun-bin": {
       "version": "1.3.14",
