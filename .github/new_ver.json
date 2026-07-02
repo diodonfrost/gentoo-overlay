@@ -21,6 +21,11 @@
       "gitref": "refs/tags/v1.15.4",
       "url": "https://github.com/hashicorp/packer/releases/tag/v1.15.4"
     },
+    "app-admin/pulumi": {
+      "version": "3.250.0",
+      "gitref": "refs/tags/v3.250.0",
+      "url": "https://github.com/pulumi/pulumi/releases/tag/v3.250.0"
+    },
     "app-admin/scaleway-cli": {
       "version": "2.58.3",
       "gitref": "refs/tags/v2.58.3",
@@ -66,6 +71,11 @@
       "version": "1.106.0",
       "revision": "fc1869c7555df65250a17781e24ab077ad1db267",
       "url": "https://gitlab.com/gitlab-org/cli/-/tags/v1.106.0"
+    },
+    "dev-util/inspec": {
+      "version": "5.24.24",
+      "gitref": "refs/tags/v5.24.24",
+      "url": "https://github.com/inspec/inspec/releases/tag/v5.24.24"
     },
     "www-client/servo": {
       "version": "0.3.0",
