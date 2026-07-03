@@ -63,9 +63,9 @@
       "url": "https://github.com/oven-sh/bun/releases/tag/bun-v1.3.14"
     },
     "dev-util/github-cli": {
-      "version": "2.95.0",
-      "gitref": "refs/tags/v2.95.0",
-      "url": "https://github.com/cli/cli/releases/tag/v2.95.0"
+      "version": "2.96.0",
+      "gitref": "refs/tags/v2.96.0",
+      "url": "https://github.com/cli/cli/releases/tag/v2.96.0"
     },
     "dev-util/glab": {
       "version": "1.106.0",
