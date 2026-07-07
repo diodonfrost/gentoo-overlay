@@ -1,10 +1,86 @@
 {
   "version": 2,
   "data": {
+    "app-accessibility/handy": {
+      "version": "0.9.0",
+      "gitref": "refs/tags/v0.9.0",
+      "url": "https://github.com/cjpais/Handy/releases/tag/v0.9.0"
+    },
+    "app-admin/helm": {
+      "version": "4.2.2",
+      "gitref": "refs/tags/v4.2.2",
+      "url": "https://github.com/helm/helm/releases/tag/v4.2.2"
+    },
+    "app-admin/kubectl": {
+      "version": "1.36.2",
+      "gitref": "refs/tags/v1.36.2",
+      "url": "https://github.com/kubernetes/kubernetes/releases/tag/v1.36.2"
+    },
+    "app-admin/packer": {
+      "version": "1.15.4",
+      "gitref": "refs/tags/v1.15.4",
+      "url": "https://github.com/hashicorp/packer/releases/tag/v1.15.4"
+    },
+    "app-admin/pulumi": {
+      "version": "3.250.0",
+      "gitref": "refs/tags/v3.250.0",
+      "url": "https://github.com/pulumi/pulumi/releases/tag/v3.250.0"
+    },
+    "app-admin/scaleway-cli": {
+      "version": "2.58.3",
+      "gitref": "refs/tags/v2.58.3",
+      "url": "https://github.com/scaleway/scaleway-cli/releases/tag/v2.58.3"
+    },
+    "app-admin/terraform": {
+      "version": "1.15.7",
+      "gitref": "refs/tags/v1.15.7",
+      "url": "https://github.com/hashicorp/terraform/releases/tag/v1.15.7"
+    },
+    "app-admin/terragrunt": {
+      "version": "1.1.0",
+      "gitref": "refs/tags/v1.1.0",
+      "url": "https://github.com/gruntwork-io/terragrunt/releases/tag/v1.1.0"
+    },
+    "app-admin/vagrant": {
+      "version": "2.4.9",
+      "gitref": "refs/tags/v2.4.9",
+      "url": "https://github.com/hashicorp/vagrant/releases/tag/v2.4.9"
+    },
+    "app-crypt/sops": {
+      "version": "3.13.2",
+      "gitref": "refs/tags/v3.13.2",
+      "url": "https://github.com/getsops/sops/releases/tag/v3.13.2"
+    },
+    "dev-build/just": {
+      "version": "1.55.1",
+      "gitref": "refs/tags/1.55.1",
+      "revision": "73089009aebf1f90a7260068c984864de482eaad",
+      "url": "https://github.com/casey/just/releases/tag/1.55.1"
+    },
+    "dev-node/bun-bin": {
+      "version": "1.3.14",
+      "gitref": "refs/tags/bun-v1.3.14",
+      "url": "https://github.com/oven-sh/bun/releases/tag/bun-v1.3.14"
+    },
+    "dev-util/github-cli": {
+      "version": "2.96.0",
+      "gitref": "refs/tags/v2.96.0",
+      "url": "https://github.com/cli/cli/releases/tag/v2.96.0"
+    },
     "dev-util/glab": {
       "version": "1.106.0",
       "revision": "fc1869c7555df65250a17781e24ab077ad1db267",
       "url": "https://gitlab.com/gitlab-org/cli/-/tags/v1.106.0"
+    },
+    "dev-util/inspec": {
+      "version": "5.24.24",
+      "gitref": "refs/tags/v5.24.24",
+      "url": "https://github.com/inspec/inspec/releases/tag/v5.24.24"
+    },
+    "www-client/servo": {
+      "version": "0.3.0",
+      "gitref": "refs/tags/v0.3.0",
+      "url": "https://github.com/servo/servo/releases/tag/v0.3.0"
     }
   }
 }
