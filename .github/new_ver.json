@@ -7,9 +7,9 @@
       "url": "https://github.com/cjpais/Handy/releases/tag/v0.9.0"
     },
     "app-admin/helm": {
-      "version": "4.2.2",
-      "gitref": "refs/tags/v4.2.2",
-      "url": "https://github.com/helm/helm/releases/tag/v4.2.2"
+      "version": "4.2.3",
+      "gitref": "refs/tags/v4.2.3",
+      "url": "https://github.com/helm/helm/releases/tag/v4.2.3"
     },
     "app-admin/kubectl": {
       "version": "1.36.2",
@@ -52,10 +52,10 @@
       "url": "https://github.com/getsops/sops/releases/tag/v3.13.2"
     },
     "dev-build/just": {
-      "version": "1.55.1",
-      "gitref": "refs/tags/1.55.1",
-      "revision": "73089009aebf1f90a7260068c984864de482eaad",
-      "url": "https://github.com/casey/just/releases/tag/1.55.1"
+      "version": "1.56.0",
+      "gitref": "refs/tags/1.56.0",
+      "revision": "f9963a4df9bd438e0db91f9440b7c58ef0432c85",
+      "url": "https://github.com/casey/just/releases/tag/1.56.0"
     },
     "dev-node/bun-bin": {
       "version": "1.3.14",
