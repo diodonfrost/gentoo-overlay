@@ -22,9 +22,9 @@
       "url": "https://github.com/hashicorp/packer/releases/tag/v1.15.4"
     },
     "app-admin/pulumi": {
-      "version": "3.252.0",
-      "gitref": "refs/tags/v3.252.0",
-      "url": "https://github.com/pulumi/pulumi/releases/tag/v3.252.0"
+      "version": "3.253.0",
+      "gitref": "refs/tags/v3.253.0",
+      "url": "https://github.com/pulumi/pulumi/releases/tag/v3.253.0"
     },
     "app-admin/scaleway-cli": {
       "version": "2.58.3",
@@ -37,9 +37,9 @@
       "url": "https://github.com/hashicorp/terraform/releases/tag/v1.15.8"
     },
     "app-admin/terragrunt": {
-      "version": "1.1.0",
-      "gitref": "refs/tags/v1.1.0",
-      "url": "https://github.com/gruntwork-io/terragrunt/releases/tag/v1.1.0"
+      "version": "1.1.1",
+      "gitref": "refs/tags/v1.1.1",
+      "url": "https://github.com/gruntwork-io/terragrunt/releases/tag/v1.1.1"
     },
     "app-admin/vagrant": {
       "version": "2.4.9",
@@ -68,9 +68,9 @@
       "url": "https://github.com/cli/cli/releases/tag/v2.96.0"
     },
     "dev-util/glab": {
-      "version": "1.107.0",
-      "revision": "85b59ceb77434c988fead857a372691868aba6d7",
-      "url": "https://gitlab.com/gitlab-org/cli/-/tags/v1.107.0"
+      "version": "1.108.0",
+      "revision": "5de20850a43cbcacf3768f846eee3dae06731ef3",
+      "url": "https://gitlab.com/gitlab-org/cli/-/tags/v1.108.0"
     },
     "dev-util/inspec": {
       "version": "5.24.24",
