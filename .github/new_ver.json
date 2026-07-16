@@ -69,6 +69,7 @@
     },
     "dev-util/glab": {
       "version": "1.108.0",
+      "gitref": "refs/tags/v1.108.0",
       "revision": "5de20850a43cbcacf3768f846eee3dae06731ef3",
       "url": "https://gitlab.com/gitlab-org/cli/-/tags/v1.108.0"
     },
