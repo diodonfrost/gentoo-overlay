@@ -2,9 +2,9 @@
   "version": 2,
   "data": {
     "app-accessibility/handy": {
-      "version": "0.9.3",
-      "gitref": "refs/tags/v0.9.3",
-      "url": "https://github.com/cjpais/Handy/releases/tag/v0.9.3"
+      "version": "0.9.4",
+      "gitref": "refs/tags/v0.9.4",
+      "url": "https://github.com/cjpais/Handy/releases/tag/v0.9.4"
     },
     "app-admin/helm": {
       "version": "4.2.3",
@@ -68,10 +68,10 @@
       "url": "https://github.com/cli/cli/releases/tag/v2.96.0"
     },
     "dev-util/glab": {
-      "version": "1.108.0",
-      "gitref": "refs/tags/v1.108.0",
-      "revision": "5de20850a43cbcacf3768f846eee3dae06731ef3",
-      "url": "https://gitlab.com/gitlab-org/cli/-/tags/v1.108.0"
+      "version": "1.109.0",
+      "gitref": "refs/tags/v1.109.0",
+      "revision": "757294c01143360b466a70daf3fbef869fc3a41b",
+      "url": "https://gitlab.com/gitlab-org/cli/-/tags/v1.109.0"
     },
     "dev-util/inspec": {
       "version": "5.24.24",
