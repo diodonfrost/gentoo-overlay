@@ -2,7 +2,7 @@
   "app-accessibility/handy": "0.9.4",
   "app-admin/helm": "4.2.3",
   "app-admin/kubectl": "1.36.3",
-  "app-admin/packer": "1.15.4",
+  "app-admin/packer": "1.16.0",
   "app-admin/pulumi": "3.254.0",
   "app-admin/scaleway-cli": "2.59.0",
   "app-admin/terraform": "1.15.8",
