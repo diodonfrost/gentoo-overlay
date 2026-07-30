@@ -6,7 +6,7 @@
   "app-admin/pulumi": "3.255.0",
   "app-admin/scaleway-cli": "2.59.0",
   "app-admin/terraform": "1.15.8",
-  "app-admin/terragrunt": "1.1.1",
+  "app-admin/terragrunt": "1.1.2",
   "app-admin/vagrant": "2.4.9",
   "app-crypt/sops": "3.13.3",
   "dev-build/just": "1.57.0",
