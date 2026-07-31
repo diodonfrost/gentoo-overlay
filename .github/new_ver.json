@@ -79,9 +79,9 @@
       "url": "https://github.com/inspec/inspec/releases/tag/v5.24.24"
     },
     "www-client/servo": {
-      "version": "0.3.0",
-      "gitref": "refs/tags/v0.3.0",
-      "url": "https://github.com/servo/servo/releases/tag/v0.3.0"
+      "version": "0.4.0",
+      "gitref": "refs/tags/0.4.0",
+      "url": "https://github.com/servo/servo/releases/tag/0.4.0"
     }
   }
 }
