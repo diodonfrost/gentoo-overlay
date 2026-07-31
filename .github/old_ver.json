@@ -11,8 +11,8 @@
   "app-crypt/sops": "3.13.3",
   "dev-build/just": "1.57.0",
   "dev-node/bun-bin": "1.3.14",
-  "dev-util/github-cli": "2.96.0",
-  "dev-util/glab": "1.110.0",
+  "dev-util/github-cli": "2.97.0",
+  "dev-util/glab": "1.111.0",
   "dev-util/inspec": "5.24.24",
   "www-client/servo": "0.3.0"
 }

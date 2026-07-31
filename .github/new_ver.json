@@ -63,15 +63,15 @@
       "url": "https://github.com/oven-sh/bun/releases/tag/bun-v1.3.14"
     },
     "dev-util/github-cli": {
-      "version": "2.96.0",
-      "gitref": "refs/tags/v2.96.0",
-      "url": "https://github.com/cli/cli/releases/tag/v2.96.0"
+      "version": "2.97.0",
+      "gitref": "refs/tags/v2.97.0",
+      "url": "https://github.com/cli/cli/releases/tag/v2.97.0"
     },
     "dev-util/glab": {
-      "version": "1.110.0",
-      "gitref": "refs/tags/v1.110.0",
-      "revision": "1797d21541f52533a001b7330ae1161b4a5ddfd3",
-      "url": "https://gitlab.com/gitlab-org/cli/-/tags/v1.110.0"
+      "version": "1.111.0",
+      "gitref": "refs/tags/v1.111.0",
+      "revision": "2389345977f28e13744e22b5802d2bbb5887cb7f",
+      "url": "https://gitlab.com/gitlab-org/cli/-/tags/v1.111.0"
     },
     "dev-util/inspec": {
       "version": "5.24.24",
