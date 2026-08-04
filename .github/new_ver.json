@@ -68,10 +68,10 @@
       "url": "https://github.com/cli/cli/releases/tag/v2.97.0"
     },
     "dev-util/glab": {
-      "version": "1.111.0",
-      "gitref": "refs/tags/v1.111.0",
-      "revision": "2389345977f28e13744e22b5802d2bbb5887cb7f",
-      "url": "https://gitlab.com/gitlab-org/cli/-/tags/v1.111.0"
+      "version": "1.112.0",
+      "gitref": "refs/tags/v1.112.0",
+      "revision": "816e3a52411aba73d90237859fdc6ecbc86bd169",
+      "url": "https://gitlab.com/gitlab-org/cli/-/tags/v1.112.0"
     },
     "dev-util/inspec": {
       "version": "5.24.24",
@@ -80,8 +80,8 @@
     },
     "www-client/servo": {
       "version": "0.4.0",
-      "gitref": "refs/tags/0.4.0",
-      "url": "https://github.com/servo/servo/releases/tag/0.4.0"
+      "gitref": "refs/tags/v0.4.0",
+      "url": "https://github.com/servo/servo/releases/tag/v0.4.0"
     }
   }
 }
