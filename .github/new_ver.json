@@ -6,16 +6,6 @@
       "gitref": "refs/tags/v0.9.5",
       "url": "https://github.com/cjpais/Handy/releases/tag/v0.9.5"
     },
-    "app-admin/helm": {
-      "version": "4.2.3",
-      "gitref": "refs/tags/v4.2.3",
-      "url": "https://github.com/helm/helm/releases/tag/v4.2.3"
-    },
-    "app-admin/kubectl": {
-      "version": "1.36.3",
-      "gitref": "refs/tags/v1.36.3",
-      "url": "https://github.com/kubernetes/kubernetes/releases/tag/v1.36.3"
-    },
     "app-admin/packer": {
       "version": "1.16.0",
       "gitref": "refs/tags/v1.16.0",
@@ -30,16 +20,6 @@
       "version": "2.60.0",
       "gitref": "refs/tags/v2.60.0",
       "url": "https://github.com/scaleway/scaleway-cli/releases/tag/v2.60.0"
-    },
-    "app-admin/terraform": {
-      "version": "1.15.8",
-      "gitref": "refs/tags/v1.15.8",
-      "url": "https://github.com/hashicorp/terraform/releases/tag/v1.15.8"
-    },
-    "app-admin/terragrunt": {
-      "version": "1.1.2",
-      "gitref": "refs/tags/v1.1.2",
-      "url": "https://github.com/gruntwork-io/terragrunt/releases/tag/v1.1.2"
     },
     "app-admin/vagrant": {
       "version": "2.4.9",
