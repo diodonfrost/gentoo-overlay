@@ -4,52 +4,62 @@
     "app-accessibility/handy": {
       "version": "0.9.5",
       "gitref": "refs/tags/v0.9.5",
-      "url": "https://github.com/cjpais/Handy/releases/tag/v0.9.5"
+      "url": "https://github.com/cjpais/Handy/releases/tag/v0.9.5",
+      "creation_time": "2026-08-08T01:29:48Z"
     },
     "app-admin/helm": {
       "version": "4.2.4",
       "gitref": "refs/tags/v4.2.4",
-      "url": "https://github.com/helm/helm/releases/tag/v4.2.4"
+      "url": "https://github.com/helm/helm/releases/tag/v4.2.4",
+      "creation_time": "2026-08-13T15:33:04Z"
     },
     "app-admin/kubectl": {
       "version": "1.36.3",
       "gitref": "refs/tags/v1.36.3",
-      "url": "https://github.com/kubernetes/kubernetes/releases/tag/v1.36.3"
+      "url": "https://github.com/kubernetes/kubernetes/releases/tag/v1.36.3",
+      "creation_time": "2026-07-23T00:35:52Z"
     },
     "app-admin/packer": {
       "version": "1.16.0",
       "gitref": "refs/tags/v1.16.0",
-      "url": "https://github.com/hashicorp/packer/releases/tag/v1.16.0"
+      "url": "https://github.com/hashicorp/packer/releases/tag/v1.16.0",
+      "creation_time": "2026-07-24T09:26:22Z"
     },
     "app-admin/pulumi": {
       "version": "3.257.0",
       "gitref": "refs/tags/v3.257.0",
-      "url": "https://github.com/pulumi/pulumi/releases/tag/v3.257.0"
+      "url": "https://github.com/pulumi/pulumi/releases/tag/v3.257.0",
+      "creation_time": "2026-08-13T14:42:12Z"
     },
     "app-admin/scaleway-cli": {
       "version": "2.60.0",
       "gitref": "refs/tags/v2.60.0",
-      "url": "https://github.com/scaleway/scaleway-cli/releases/tag/v2.60.0"
+      "url": "https://github.com/scaleway/scaleway-cli/releases/tag/v2.60.0",
+      "creation_time": "2026-07-30T15:36:04Z"
     },
     "app-admin/terraform": {
       "version": "1.15.8",
       "gitref": "refs/tags/v1.15.8",
-      "url": "https://github.com/hashicorp/terraform/releases/tag/v1.15.8"
+      "url": "https://github.com/hashicorp/terraform/releases/tag/v1.15.8",
+      "creation_time": "2026-07-08T17:45:09Z"
     },
     "app-admin/terragrunt": {
       "version": "1.1.3",
       "gitref": "refs/tags/v1.1.3",
-      "url": "https://github.com/gruntwork-io/terragrunt/releases/tag/v1.1.3"
+      "url": "https://github.com/gruntwork-io/terragrunt/releases/tag/v1.1.3",
+      "creation_time": "2026-08-13T14:48:22Z"
     },
     "app-admin/vagrant": {
       "version": "2.4.9",
       "gitref": "refs/tags/v2.4.9",
-      "url": "https://github.com/hashicorp/vagrant/releases/tag/v2.4.9"
+      "url": "https://github.com/hashicorp/vagrant/releases/tag/v2.4.9",
+      "creation_time": "2025-08-21T07:45:30Z"
     },
     "app-crypt/sops": {
       "version": "3.13.3",
       "gitref": "refs/tags/v3.13.3",
-      "url": "https://github.com/getsops/sops/releases/tag/v3.13.3"
+      "url": "https://github.com/getsops/sops/releases/tag/v3.13.3",
+      "creation_time": "2026-07-23T05:27:57Z"
     },
     "dev-build/just": {
       "version": "1.58.0",
@@ -60,28 +70,34 @@
     "dev-node/bun-bin": {
       "version": "1.3.14",
       "gitref": "refs/tags/bun-v1.3.14",
-      "url": "https://github.com/oven-sh/bun/releases/tag/bun-v1.3.14"
+      "url": "https://github.com/oven-sh/bun/releases/tag/bun-v1.3.14",
+      "creation_time": "2026-05-13T03:48:28Z"
     },
     "dev-util/github-cli": {
       "version": "2.97.0",
       "gitref": "refs/tags/v2.97.0",
-      "url": "https://github.com/cli/cli/releases/tag/v2.97.0"
+      "url": "https://github.com/cli/cli/releases/tag/v2.97.0",
+      "creation_time": "2026-07-31T02:04:00Z"
     },
     "dev-util/glab": {
       "version": "1.113.0",
       "gitref": "refs/tags/v1.113.0",
       "revision": "d62881304ccba9e24d07bcfb2c5e8bcae3f17f75",
-      "url": "https://gitlab.com/gitlab-org/cli/-/tags/v1.113.0"
+      "url": "https://gitlab.com/gitlab-org/cli/-/tags/v1.113.0",
+      "creation_time": "2026-08-11T12:09:12.000Z",
+      "revision_creation_time": "2026-08-11T10:46:13.000+02:00"
     },
     "dev-util/inspec": {
       "version": "5.24.24",
       "gitref": "refs/tags/v5.24.24",
-      "url": "https://github.com/inspec/inspec/releases/tag/v5.24.24"
+      "url": "https://github.com/inspec/inspec/releases/tag/v5.24.24",
+      "creation_time": "2026-06-25T13:38:48Z"
     },
     "www-client/servo": {
       "version": "0.4.0",
       "gitref": "refs/tags/v0.4.0",
-      "url": "https://github.com/servo/servo/releases/tag/v0.4.0"
+      "url": "https://github.com/servo/servo/releases/tag/v0.4.0",
+      "creation_time": "2026-08-04T18:09:39Z"
     }
   }
 }
