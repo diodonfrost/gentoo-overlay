@@ -26,10 +26,10 @@
       "creation_time": "2026-07-24T09:26:22Z"
     },
     "app-admin/pulumi": {
-      "version": "3.257.0",
-      "gitref": "refs/tags/v3.257.0",
-      "url": "https://github.com/pulumi/pulumi/releases/tag/v3.257.0",
-      "creation_time": "2026-08-13T14:42:12Z"
+      "version": "3.258.0",
+      "gitref": "refs/tags/v3.258.0",
+      "url": "https://github.com/pulumi/pulumi/releases/tag/v3.258.0",
+      "creation_time": "2026-08-17T19:04:32Z"
     },
     "app-admin/scaleway-cli": {
       "version": "2.60.0",
