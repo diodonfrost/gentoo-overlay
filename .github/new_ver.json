@@ -14,10 +14,10 @@
       "creation_time": "2026-08-13T15:33:04Z"
     },
     "app-admin/kubectl": {
-      "version": "1.36.3",
-      "gitref": "refs/tags/v1.36.3",
-      "url": "https://github.com/kubernetes/kubernetes/releases/tag/v1.36.3",
-      "creation_time": "2026-07-23T00:35:52Z"
+      "version": "1.36.4",
+      "gitref": "refs/tags/v1.36.4",
+      "url": "https://github.com/kubernetes/kubernetes/releases/tag/v1.36.4",
+      "creation_time": "2026-08-20T11:48:16Z"
     },
     "app-admin/packer": {
       "version": "1.16.0",
@@ -68,10 +68,10 @@
       "url": "https://github.com/casey/just/releases/tag/1.58.0"
     },
     "dev-node/bun-bin": {
-      "version": "1.3.14",
-      "gitref": "refs/tags/bun-v1.3.14",
-      "url": "https://github.com/oven-sh/bun/releases/tag/bun-v1.3.14",
-      "creation_time": "2026-05-13T03:48:28Z"
+      "version": "1.4.0",
+      "gitref": "refs/tags/bun-v1.4.0",
+      "url": "https://github.com/oven-sh/bun/releases/tag/bun-v1.4.0",
+      "creation_time": "2026-08-20T14:07:21Z"
     },
     "dev-util/github-cli": {
       "version": "2.97.0",
