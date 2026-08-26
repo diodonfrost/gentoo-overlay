@@ -14,10 +14,10 @@
       "creation_time": "2026-08-13T15:33:04Z"
     },
     "app-admin/kubectl": {
-      "version": "1.36.4",
-      "gitref": "refs/tags/v1.36.4",
-      "url": "https://github.com/kubernetes/kubernetes/releases/tag/v1.36.4",
-      "creation_time": "2026-08-20T11:48:16Z"
+      "version": "1.37.0",
+      "gitref": "refs/tags/v1.37.0",
+      "url": "https://github.com/kubernetes/kubernetes/releases/tag/v1.37.0",
+      "creation_time": "2026-08-26T16:29:12Z"
     },
     "app-admin/packer": {
       "version": "1.16.0",
@@ -38,10 +38,10 @@
       "creation_time": "2026-08-18T08:30:00Z"
     },
     "app-admin/terraform": {
-      "version": "1.15.9",
-      "gitref": "refs/tags/v1.15.9",
-      "url": "https://github.com/hashicorp/terraform/releases/tag/v1.15.9",
-      "creation_time": "2026-08-19T14:29:32Z"
+      "version": "1.16.0",
+      "gitref": "refs/tags/v1.16.0",
+      "url": "https://github.com/hashicorp/terraform/releases/tag/v1.16.0",
+      "creation_time": "2026-08-26T13:05:28Z"
     },
     "app-admin/terragrunt": {
       "version": "1.1.3",
