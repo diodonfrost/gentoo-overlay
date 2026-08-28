@@ -3,7 +3,7 @@
   "app-admin/helm": "4.2.4",
   "app-admin/kubectl": "1.37.0",
   "app-admin/packer": "1.16.0",
-  "app-admin/pulumi": "3.259.0",
+  "app-admin/pulumi": "3.260.0",
   "app-admin/scaleway-cli": "2.61.0",
   "app-admin/terraform": "1.16.0",
   "app-admin/terragrunt": "1.1.4",
