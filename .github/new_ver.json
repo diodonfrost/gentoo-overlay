@@ -94,10 +94,10 @@
       "creation_time": "2026-06-25T13:38:48Z"
     },
     "www-client/servo": {
-      "version": "0.4.0",
-      "gitref": "refs/tags/v0.4.0",
-      "url": "https://github.com/servo/servo/releases/tag/v0.4.0",
-      "creation_time": "2026-08-04T18:09:39Z"
+      "version": "0.5.0",
+      "gitref": "refs/tags/v0.5.0",
+      "url": "https://github.com/servo/servo/releases/tag/v0.5.0",
+      "creation_time": "2026-08-31T10:20:07Z"
     }
   }
 }
