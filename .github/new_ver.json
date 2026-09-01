@@ -32,10 +32,10 @@
       "creation_time": "2026-08-28T11:06:12Z"
     },
     "app-admin/scaleway-cli": {
-      "version": "2.61.0",
-      "gitref": "refs/tags/v2.61.0",
-      "url": "https://github.com/scaleway/scaleway-cli/releases/tag/v2.61.0",
-      "creation_time": "2026-08-18T08:30:00Z"
+      "version": "2.62.0",
+      "gitref": "refs/tags/v2.62.0",
+      "url": "https://github.com/scaleway/scaleway-cli/releases/tag/v2.62.0",
+      "creation_time": "2026-09-01T10:44:46Z"
     },
     "app-admin/terraform": {
       "version": "1.16.0",
@@ -80,12 +80,12 @@
       "creation_time": "2026-08-20T22:15:58Z"
     },
     "dev-util/glab": {
-      "version": "1.115.0",
-      "gitref": "refs/tags/v1.115.0",
-      "revision": "c3612c8deb89183da68aa0d31ca1f748f381d820",
-      "url": "https://gitlab.com/gitlab-org/cli/-/tags/v1.115.0",
-      "creation_time": "2026-08-25T20:26:41.000Z",
-      "revision_creation_time": "2026-08-25T16:17:16.000+10:00"
+      "version": "1.116.0",
+      "gitref": "refs/tags/v1.116.0",
+      "revision": "e8436ca8a1715369087a8c67787493b2434a3822",
+      "url": "https://gitlab.com/gitlab-org/cli/-/tags/v1.116.0",
+      "creation_time": "2026-09-01T12:21:46.000Z",
+      "revision_creation_time": "2026-09-01T09:06:40.000+02:00"
     },
     "dev-util/inspec": {
       "version": "5.24.24",
