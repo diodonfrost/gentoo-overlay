@@ -8,10 +8,10 @@
       "creation_time": "2026-08-24T08:55:57Z"
     },
     "app-admin/helm": {
-      "version": "4.2.4",
-      "gitref": "refs/tags/v4.2.4",
-      "url": "https://github.com/helm/helm/releases/tag/v4.2.4",
-      "creation_time": "2026-08-13T15:33:04Z"
+      "version": "4.3.0",
+      "gitref": "refs/tags/v4.3.0",
+      "url": "https://github.com/helm/helm/releases/tag/v4.3.0",
+      "creation_time": "2026-09-09T23:51:48Z"
     },
     "app-admin/kubectl": {
       "version": "1.37.0",
