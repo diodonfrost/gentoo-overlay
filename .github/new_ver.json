@@ -80,12 +80,12 @@
       "creation_time": "2026-09-15T14:24:34Z"
     },
     "dev-util/glab": {
-      "version": "1.119.0",
-      "gitref": "refs/tags/v1.119.0",
-      "revision": "f5016eda261bb7142627d05d1d85a20d6dd56ddc",
-      "url": "https://gitlab.com/gitlab-org/cli/-/tags/v1.119.0",
-      "creation_time": "2026-09-22T12:08:31.000Z",
-      "revision_creation_time": "2026-09-22T14:02:44.000+02:00"
+      "version": "1.120.0",
+      "gitref": "refs/tags/v1.120.0",
+      "revision": "78790114c4d7196c97b2b1a1263a0d725835640d",
+      "url": "https://gitlab.com/gitlab-org/cli/-/tags/v1.120.0",
+      "creation_time": "2026-09-29T12:09:46.000Z",
+      "revision_creation_time": "2026-09-29T17:12:44.000+10:00"
     },
     "dev-util/inspec": {
       "version": "5.24.24",
@@ -94,10 +94,10 @@
       "creation_time": "2026-06-25T13:38:48Z"
     },
     "www-client/servo": {
-      "version": "0.5.0",
-      "gitref": "refs/tags/v0.5.0",
-      "url": "https://github.com/servo/servo/releases/tag/v0.5.0",
-      "creation_time": "2026-08-31T10:20:07Z"
+      "version": "0.6.0",
+      "gitref": "refs/tags/v0.6.0",
+      "url": "https://github.com/servo/servo/releases/tag/v0.6.0",
+      "creation_time": "2026-09-29T15:33:02Z"
     }
   }
 }
