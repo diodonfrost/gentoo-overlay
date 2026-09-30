@@ -26,10 +26,10 @@
       "creation_time": "2026-09-18T12:52:47Z"
     },
     "app-admin/pulumi": {
-      "version": "3.265.0",
-      "gitref": "refs/tags/v3.265.0",
-      "url": "https://github.com/pulumi/pulumi/releases/tag/v3.265.0",
-      "creation_time": "2026-09-25T22:34:03Z"
+      "version": "3.266.0",
+      "gitref": "refs/tags/v3.266.0",
+      "url": "https://github.com/pulumi/pulumi/releases/tag/v3.266.0",
+      "creation_time": "2026-09-30T11:33:14Z"
     },
     "app-admin/scaleway-cli": {
       "version": "2.63.0",
@@ -74,10 +74,10 @@
       "creation_time": "2026-09-05T05:55:48Z"
     },
     "dev-util/github-cli": {
-      "version": "2.101.0",
-      "gitref": "refs/tags/v2.101.0",
-      "url": "https://github.com/cli/cli/releases/tag/v2.101.0",
-      "creation_time": "2026-09-15T14:24:34Z"
+      "version": "2.102.0",
+      "gitref": "refs/tags/v2.102.0",
+      "url": "https://github.com/cli/cli/releases/tag/v2.102.0",
+      "creation_time": "2026-09-30T02:40:02Z"
     },
     "dev-util/glab": {
       "version": "1.120.0",
