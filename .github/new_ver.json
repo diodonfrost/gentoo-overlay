@@ -2,10 +2,10 @@
   "version": 2,
   "data": {
     "app-accessibility/handy": {
-      "version": "0.9.7",
-      "gitref": "refs/tags/v0.9.7",
-      "url": "https://github.com/cjpais/Handy/releases/tag/v0.9.7",
-      "creation_time": "2026-09-18T14:11:52Z"
+      "version": "0.9.8",
+      "gitref": "refs/tags/v0.9.8",
+      "url": "https://github.com/cjpais/Handy/releases/tag/v0.9.8",
+      "creation_time": "2026-10-03T02:42:15Z"
     },
     "app-admin/helm": {
       "version": "4.3.0",
