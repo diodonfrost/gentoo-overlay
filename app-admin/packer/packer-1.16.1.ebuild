@@ -16,7 +16,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm64"
 RESTRICT="network-sandbox test"
 
-BDEPEND=">=dev-lang/go-1.24"
+BDEPEND=">=dev-lang/go-1.26.8"
 
 src_compile() {
 	ego build \
