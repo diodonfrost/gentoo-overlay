@@ -32,17 +32,23 @@ jobs:
 
       - name: Compare versions and build matrix
         id: compare
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          MATRIX=$(python3 -c "
-          import json, tomllib
+          # Bump PRs still open (e.g. failing CI) are left alone so that fixes
+          # pushed to them by hand are not overwritten by the next run.
+          OPEN_BRANCHES=$(gh pr list --state open --limit 200 --json headRefName --jq '.[].headRefName')
+          export OPEN_BRANCHES
 
-          with open('.github/old_ver.json') as f:
-              old = json.load(f)
+          MATRIX=$(python3 -c "
+          import glob, json, os, re, sys, tomllib
+
           with open('.github/new_ver.json') as f:
               raw_new = json.load(f)
           with open('.github/nvchecker.toml', 'rb') as f:
               config = tomllib.load(f)
           config.pop('__config__', None)
+          open_branches = os.environ.get('OPEN_BRANCHES', '').split()
 
           # nvchecker v2 format: {version: 2, data: {atom: {version: '...'}}}
           if 'data' in raw_new:
@@ -50,12 +56,26 @@ jobs:
           else:
               new = raw_new
 
+          def vkey(version):
+              return [int(n) for n in re.findall('[0-9]+', version)]
+
           updates = []
           for atom, new_ver in new.items():
-              old_ver = old.get(atom, '')
-              if old_ver == new_ver:
-                  continue
               category, name = atom.split('/')
+              # Compare against the ebuild in the repo rather than old_ver.json:
+              # old_ver.json advances even when a bump fails (download error,
+              # PR closed unmerged), which used to drop that bump for good.
+              ebuilds = glob.glob(f'{atom}/{name}-[0-9]*.ebuild')
+              if not ebuilds:
+                  print(f'{atom}: no ebuild found, skipping', file=sys.stderr)
+                  continue
+              old_ver = max((os.path.basename(e)[len(name) + 1:-len('.ebuild')] for e in ebuilds), key=vkey)
+              if vkey(new_ver) <= vkey(old_ver):
+                  continue
+              branch_prefix = f'update/{name}-'
+              if any(b.startswith(branch_prefix) and b[len(branch_prefix):][:1].isdigit() for b in open_branches):
+                  print(f'{atom}: {new_ver} available, but a bump PR is already open', file=sys.stderr)
+                  continue
               pkg = config.get(atom, {})
               gh = pkg.get('github', '')
               gl = pkg.get('gitlab', '')
