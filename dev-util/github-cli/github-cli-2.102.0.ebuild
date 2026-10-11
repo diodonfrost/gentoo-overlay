@@ -20,7 +20,7 @@ RESTRICT="network-sandbox test"
 
 RDEPEND=">=dev-vcs/git-1.7.3"
 
-BDEPEND=">=dev-lang/go-1.26"
+BDEPEND=">=dev-lang/go-1.27"
 
 src_compile() {
 	ego build \
