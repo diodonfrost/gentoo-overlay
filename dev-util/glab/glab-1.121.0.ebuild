@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~arm64"
 RESTRICT="network-sandbox test"
 
 BDEPEND="
-	>=dev-lang/go-1.25
+	>=dev-lang/go-1.27
 	dev-vcs/git
 "
 
