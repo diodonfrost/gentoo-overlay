@@ -153,9 +153,22 @@ jobs:
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
 
       - name: Bump ebuild version
+        id: bump
         run: |
-          OLD_EBUILD="${{ matrix.category }}/${{ matrix.name }}/${{ matrix.name }}-${{ matrix.old_version }}.ebuild"
-          NEW_EBUILD="${{ matrix.category }}/${{ matrix.name }}/${{ matrix.name }}-${{ matrix.new_version }}.ebuild"
+          PKG_DIR="${{ matrix.category }}/${{ matrix.name }}"
+          NEW_EBUILD="${PKG_DIR}/${{ matrix.name }}-${{ matrix.new_version }}.ebuild"
+
+          # Start from the ebuild actually on master, not old_ver.json's
+          # version: old_ver.json is updated even when a bump PR is still
+          # pending, so the two drift apart and the old ebuild goes missing.
+          OLD_EBUILD=$(ls "${PKG_DIR}/${{ matrix.name }}"-[0-9]*.ebuild | sort -V | tail -n 1)
+          OLD_VERSION=$(basename "${OLD_EBUILD}" .ebuild)
+          echo "old_version=${OLD_VERSION#${{ matrix.name }}-}" >> "$GITHUB_OUTPUT"
+
+          if [ "${OLD_EBUILD}" = "${NEW_EBUILD}" ]; then
+            echo "${NEW_EBUILD} already exists"
+            exit 0
+          fi
 
           cp "${OLD_EBUILD}" "${NEW_EBUILD}"
           rm "${OLD_EBUILD}"
@@ -177,7 +190,7 @@ jobs:
           title: "Update ${{ matrix.name }} to ${{ matrix.new_version }}"
           body: |
             ## Summary
-            - Bumps **${{ matrix.atom }}** from `${{ matrix.old_version }}` to `${{ matrix.new_version }}`
+            - Bumps **${{ matrix.atom }}** from `${{ steps.bump.outputs.old_version }}` to `${{ matrix.new_version }}`
             - Upstream release: ${{ matrix.release_url }}
 
             ## Test plan
