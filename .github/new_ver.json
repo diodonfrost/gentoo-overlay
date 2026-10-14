@@ -26,10 +26,10 @@
       "creation_time": "2026-09-18T12:52:47Z"
     },
     "app-admin/pulumi": {
-      "version": "3.268.0",
-      "gitref": "refs/tags/v3.268.0",
-      "url": "https://github.com/pulumi/pulumi/releases/tag/v3.268.0",
-      "creation_time": "2026-10-07T10:24:48Z"
+      "version": "3.269.0",
+      "gitref": "refs/tags/v3.269.0",
+      "url": "https://github.com/pulumi/pulumi/releases/tag/v3.269.0",
+      "creation_time": "2026-10-14T14:04:06Z"
     },
     "app-admin/scaleway-cli": {
       "version": "2.65.1",
@@ -38,10 +38,10 @@
       "creation_time": "2026-10-07T16:04:22Z"
     },
     "app-admin/terraform": {
-      "version": "1.16.5",
-      "gitref": "refs/tags/v1.16.5",
-      "url": "https://github.com/hashicorp/terraform/releases/tag/v1.16.5",
-      "creation_time": "2026-10-02T13:04:00Z"
+      "version": "1.16.6",
+      "gitref": "refs/tags/v1.16.6",
+      "url": "https://github.com/hashicorp/terraform/releases/tag/v1.16.6",
+      "creation_time": "2026-10-14T09:31:54Z"
     },
     "app-admin/terragrunt": {
       "version": "1.1.6",
