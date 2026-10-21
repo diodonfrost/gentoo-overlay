@@ -26,28 +26,28 @@
       "creation_time": "2026-09-18T12:52:47Z"
     },
     "app-admin/pulumi": {
-      "version": "3.270.0",
-      "gitref": "refs/tags/v3.270.0",
-      "url": "https://github.com/pulumi/pulumi/releases/tag/v3.270.0",
-      "creation_time": "2026-10-16T20:28:10Z"
+      "version": "3.271.0",
+      "gitref": "refs/tags/v3.271.0",
+      "url": "https://github.com/pulumi/pulumi/releases/tag/v3.271.0",
+      "creation_time": "2026-10-21T17:20:09Z"
     },
     "app-admin/scaleway-cli": {
-      "version": "2.65.1",
-      "gitref": "refs/tags/v2.65.1",
-      "url": "https://github.com/scaleway/scaleway-cli/releases/tag/v2.65.1",
-      "creation_time": "2026-10-07T16:04:22Z"
+      "version": "2.65.2",
+      "gitref": "refs/tags/v2.65.2",
+      "url": "https://github.com/scaleway/scaleway-cli/releases/tag/v2.65.2",
+      "creation_time": "2026-10-21T10:07:22Z"
     },
     "app-admin/terraform": {
-      "version": "1.16.6",
-      "gitref": "refs/tags/v1.16.6",
-      "url": "https://github.com/hashicorp/terraform/releases/tag/v1.16.6",
-      "creation_time": "2026-10-14T09:31:54Z"
+      "version": "1.17.0",
+      "gitref": "refs/tags/v1.17.0",
+      "url": "https://github.com/hashicorp/terraform/releases/tag/v1.17.0",
+      "creation_time": "2026-10-21T17:32:54Z"
     },
     "app-admin/terragrunt": {
-      "version": "1.1.6",
-      "gitref": "refs/tags/v1.1.6",
-      "url": "https://github.com/gruntwork-io/terragrunt/releases/tag/v1.1.6",
-      "creation_time": "2026-09-21T13:27:08Z"
+      "version": "1.2.0",
+      "gitref": "refs/tags/v1.2.0",
+      "url": "https://github.com/gruntwork-io/terragrunt/releases/tag/v1.2.0",
+      "creation_time": "2026-10-21T12:37:54Z"
     },
     "app-admin/vagrant": {
       "version": "2.4.9",
@@ -74,10 +74,10 @@
       "creation_time": "2026-10-10T05:24:54Z"
     },
     "dev-util/github-cli": {
-      "version": "2.102.1",
-      "gitref": "refs/tags/v2.102.1",
-      "url": "https://github.com/cli/cli/releases/tag/v2.102.1",
-      "creation_time": "2026-10-20T19:35:51Z"
+      "version": "2.103.0",
+      "gitref": "refs/tags/v2.103.0",
+      "url": "https://github.com/cli/cli/releases/tag/v2.103.0",
+      "creation_time": "2026-10-21T15:33:31Z"
     },
     "dev-util/glab": {
       "version": "1.124.0",
