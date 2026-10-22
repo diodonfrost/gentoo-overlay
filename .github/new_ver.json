@@ -19,12 +19,6 @@
       "url": "https://github.com/kubernetes/kubernetes/releases/tag/v1.37.1",
       "creation_time": "2026-09-23T19:13:17Z"
     },
-    "app-admin/packer": {
-      "version": "1.16.1",
-      "gitref": "refs/tags/v1.16.1",
-      "url": "https://github.com/hashicorp/packer/releases/tag/v1.16.1",
-      "creation_time": "2026-09-18T12:52:47Z"
-    },
     "app-admin/pulumi": {
       "version": "3.271.0",
       "gitref": "refs/tags/v3.271.0",
@@ -36,12 +30,6 @@
       "gitref": "refs/tags/v2.65.2",
       "url": "https://github.com/scaleway/scaleway-cli/releases/tag/v2.65.2",
       "creation_time": "2026-10-21T10:07:22Z"
-    },
-    "app-admin/terraform": {
-      "version": "1.17.0",
-      "gitref": "refs/tags/v1.17.0",
-      "url": "https://github.com/hashicorp/terraform/releases/tag/v1.17.0",
-      "creation_time": "2026-10-21T17:32:54Z"
     },
     "app-admin/terragrunt": {
       "version": "1.2.0",
@@ -68,10 +56,10 @@
       "url": "https://github.com/casey/just/releases/tag/1.59.0"
     },
     "dev-node/bun-bin": {
-      "version": "1.4.3",
-      "gitref": "refs/tags/bun-v1.4.3",
-      "url": "https://github.com/oven-sh/bun/releases/tag/bun-v1.4.3",
-      "creation_time": "2026-10-10T05:24:54Z"
+      "version": "1.4.4",
+      "gitref": "refs/tags/bun-v1.4.4",
+      "url": "https://github.com/oven-sh/bun/releases/tag/bun-v1.4.4",
+      "creation_time": "2026-10-22T10:11:32Z"
     },
     "dev-util/github-cli": {
       "version": "2.103.0",
@@ -86,12 +74,6 @@
       "url": "https://gitlab.com/gitlab-org/cli/-/tags/v1.124.0",
       "creation_time": "2026-10-20T12:06:39.000Z",
       "revision_creation_time": "2026-10-20T13:40:17.000+10:00"
-    },
-    "dev-util/inspec": {
-      "version": "5.24.24",
-      "gitref": "refs/tags/v5.24.24",
-      "url": "https://github.com/inspec/inspec/releases/tag/v5.24.24",
-      "creation_time": "2026-06-25T13:38:48Z"
     },
     "www-client/servo": {
       "version": "0.7.0",
