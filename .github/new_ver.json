@@ -74,10 +74,10 @@
       "creation_time": "2026-10-22T10:11:32Z"
     },
     "dev-util/github-cli": {
-      "version": "2.103.2",
-      "gitref": "refs/tags/v2.103.2",
-      "url": "https://github.com/cli/cli/releases/tag/v2.103.2",
-      "creation_time": "2026-10-23T20:24:12Z"
+      "version": "2.103.3",
+      "gitref": "refs/tags/v2.103.3",
+      "url": "https://github.com/cli/cli/releases/tag/v2.103.3",
+      "creation_time": "2026-10-26T19:20:08Z"
     },
     "dev-util/glab": {
       "version": "1.124.0",
