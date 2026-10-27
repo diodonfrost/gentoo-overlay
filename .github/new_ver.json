@@ -80,12 +80,12 @@
       "creation_time": "2026-10-26T19:20:08Z"
     },
     "dev-util/glab": {
-      "version": "1.124.0",
-      "gitref": "refs/tags/v1.124.0",
-      "revision": "d43ccacecb043b0c060dd13224cf993140db6c2b",
-      "url": "https://gitlab.com/gitlab-org/cli/-/tags/v1.124.0",
-      "creation_time": "2026-10-20T12:06:39.000Z",
-      "revision_creation_time": "2026-10-20T13:40:17.000+10:00"
+      "version": "1.125.0",
+      "gitref": "refs/tags/v1.125.0",
+      "revision": "685c1cbd74c882e0c93d7011657adde811582ed7",
+      "url": "https://gitlab.com/gitlab-org/cli/-/tags/v1.125.0",
+      "creation_time": "2026-10-27T12:06:33.000Z",
+      "revision_creation_time": "2026-10-27T16:27:32.000+10:00"
     },
     "dev-util/inspec": {
       "version": "5.24.24",
