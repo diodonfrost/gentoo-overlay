@@ -89,6 +89,20 @@ github = "cjpais/handy"
 use_latest_release = true
 prefix = "v"
 
+# --- Rust + Go hybrid (shared monorepo, single nym-vpn-v* release tag) ---
+
+["net-vpn/nym-vpn-core"]
+source = "github"
+github = "nymtech/nym-vpn-client"
+use_latest_release = true
+prefix = "nym-vpn-v"
+
+["net-vpn/nym-vpn-app"]
+source = "github"
+github = "nymtech/nym-vpn-client"
+use_latest_release = true
+prefix = "nym-vpn-v"
+
 # --- Ruby packages ---
 
 ["app-admin/vagrant"]

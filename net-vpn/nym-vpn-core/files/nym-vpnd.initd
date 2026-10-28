@@ -1,0 +1,15 @@
+#!/sbin/openrc-run
+# Copyright 1999-2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+description="NymVPN daemon"
+supervisor="supervise-daemon"
+command="/usr/bin/nym-vpnd"
+command_args="-v run-as-service"
+respawn_delay=5
+respawn_max=6
+
+depend() {
+	need net dbus
+	use dns
+}

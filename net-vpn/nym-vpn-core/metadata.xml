@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>diodon.frost@diodonfrost.me</email>
+		<name>diodonfrost</name>
+	</maintainer>
+	<longdescription>
+		NymVPN core components: the nym-vpnd daemon (which routes traffic
+		through the Nym mixnet or over WireGuard), the nym-vpnc command-line
+		client, the nym-exclude split-tunnel helper, the nym-socks5-proxy
+		and the nym-diagnostic tool. The graphical client is shipped
+		separately as net-vpn/nym-vpn-app.
+	</longdescription>
+	<upstream>
+		<remote-id type="github">nymtech/nym-vpn-client</remote-id>
+	</upstream>
+</pkgmetadata>
