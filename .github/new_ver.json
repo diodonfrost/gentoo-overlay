@@ -38,10 +38,10 @@
       "creation_time": "2026-10-21T10:07:22Z"
     },
     "app-admin/terraform": {
-      "version": "1.17.0",
-      "gitref": "refs/tags/v1.17.0",
-      "url": "https://github.com/hashicorp/terraform/releases/tag/v1.17.0",
-      "creation_time": "2026-10-21T17:32:54Z"
+      "version": "1.17.1",
+      "gitref": "refs/tags/v1.17.1",
+      "url": "https://github.com/hashicorp/terraform/releases/tag/v1.17.1",
+      "creation_time": "2026-10-28T18:02:22Z"
     },
     "app-admin/terragrunt": {
       "version": "1.2.1",
