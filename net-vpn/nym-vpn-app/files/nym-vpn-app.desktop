@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=NymVPN
+Comment=Decentralized, mixnet, and zero-knowledge VPN
+Exec=env LOG_FILE=1 RUST_LOG=info,nym_vpn_app=debug nym-vpn-app %U
+Icon=nym-vpn-app
+Terminal=false
+Type=Application
+Categories=Network;
+StartupWMClass=nym-vpn-app
+MimeType=x-scheme-handler/nymvpn;

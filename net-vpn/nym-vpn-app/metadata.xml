@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>diodon.frost@diodonfrost.me</email>
+		<name>diodonfrost</name>
+	</maintainer>
+	<longdescription>
+		NymVPN desktop client built with Tauri. It is a frontend for the
+		nym-vpnd daemon shipped by net-vpn/nym-vpn-core and talks to it over
+		its local gRPC socket.
+	</longdescription>
+	<use>
+		<flag name="appindicator">Pull in dev-libs/libayatana-appindicator so the
+		tray icon still works on desktops without a StatusNotifierWatcher</flag>
+	</use>
+	<upstream>
+		<remote-id type="github">nymtech/nym-vpn-client</remote-id>
+	</upstream>
+</pkgmetadata>

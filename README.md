@@ -31,6 +31,8 @@ emerge --sync diodonfrost
 | dev-util | [glab](https://gitlab.com/gitlab-org/cli) | GitLab CLI |
 | dev-util | [inspec](https://www.inspec.io) | Infrastructure compliance testing |
 | net-im | [discord-bin](https://discord.com) | Discord chat client (pre-built binary) |
+| net-vpn | [nym-vpn-app](https://nym.com) | NymVPN desktop client (Tauri GUI for nym-vpnd) |
+| net-vpn | [nym-vpn-core](https://nym.com) | NymVPN daemon, CLI client and split-tunnel helper |
 | www-client | [servo](https://servo.org) | Independent web rendering engine |
 
 ## Testing Builds
