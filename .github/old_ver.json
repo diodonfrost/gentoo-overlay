@@ -1,7 +1,7 @@
 {
   "app-accessibility/handy": "0.9.8",
   "app-admin/helm": "4.3.1",
-  "app-admin/kubectl": "1.37.1",
+  "app-admin/kubectl": "1.37.2",
   "app-admin/packer": "1.16.2",
   "app-admin/pulumi": "3.272.0",
   "app-admin/scaleway-cli": "2.65.2",
