@@ -16,5 +16,5 @@
   "dev-util/inspec": "5.24.24",
   "net-vpn/nym-vpn-app": "2026.15.1",
   "net-vpn/nym-vpn-core": "2026.15.1",
-  "www-client/servo": "0.7.0"
+  "www-client/servo": "0.8.0"
 }
