@@ -93,16 +93,16 @@
       "creation_time": "2026-06-25T13:38:48Z"
     },
     "net-vpn/nym-vpn-app": {
-      "version": "2026.15.2",
-      "gitref": "refs/tags/nym-vpn-v2026.15.2",
-      "url": "https://github.com/nymtech/nym-vpn-client/releases/tag/nym-vpn-v2026.15.2",
-      "creation_time": "2026-11-10T18:56:58Z"
+      "version": "2026.15.3",
+      "gitref": "refs/tags/nym-vpn-v2026.15.3",
+      "url": "https://github.com/nymtech/nym-vpn-client/releases/tag/nym-vpn-v2026.15.3",
+      "creation_time": "2026-11-11T18:35:17Z"
     },
     "net-vpn/nym-vpn-core": {
-      "version": "2026.15.2",
-      "gitref": "refs/tags/nym-vpn-v2026.15.2",
-      "url": "https://github.com/nymtech/nym-vpn-client/releases/tag/nym-vpn-v2026.15.2",
-      "creation_time": "2026-11-10T18:56:58Z"
+      "version": "2026.15.3",
+      "gitref": "refs/tags/nym-vpn-v2026.15.3",
+      "url": "https://github.com/nymtech/nym-vpn-client/releases/tag/nym-vpn-v2026.15.3",
+      "creation_time": "2026-11-11T18:35:17Z"
     },
     "www-client/servo": {
       "version": "0.8.0",
