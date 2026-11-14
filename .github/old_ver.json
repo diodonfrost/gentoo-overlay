@@ -1,5 +1,5 @@
 {
-  "app-accessibility/handy": "0.10.0",
+  "app-accessibility/handy": "0.10.1",
   "app-admin/helm": "4.3.2",
   "app-admin/kubectl": "1.37.2",
   "app-admin/packer": "1.16.2",
