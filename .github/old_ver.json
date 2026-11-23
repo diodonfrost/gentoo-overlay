@@ -4,7 +4,7 @@
   "app-admin/kubectl": "1.37.2",
   "app-admin/packer": "1.16.2",
   "app-admin/pulumi": "3.277.0",
-  "app-admin/scaleway-cli": "2.66.2",
+  "app-admin/scaleway-cli": "2.67.0",
   "app-admin/terraform": "1.17.2",
   "app-admin/terragrunt": "1.2.2",
   "app-admin/vagrant": "2.4.9",

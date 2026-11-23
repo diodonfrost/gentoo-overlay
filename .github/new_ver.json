@@ -32,10 +32,10 @@
       "creation_time": "2026-11-18T13:02:51Z"
     },
     "app-admin/scaleway-cli": {
-      "version": "2.66.2",
-      "gitref": "refs/tags/v2.66.2",
-      "url": "https://github.com/scaleway/scaleway-cli/releases/tag/v2.66.2",
-      "creation_time": "2026-11-18T17:12:02Z"
+      "version": "2.67.0",
+      "gitref": "refs/tags/v2.67.0",
+      "url": "https://github.com/scaleway/scaleway-cli/releases/tag/v2.67.0",
+      "creation_time": "2026-11-23T14:34:43Z"
     },
     "app-admin/terraform": {
       "version": "1.17.2",
