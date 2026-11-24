@@ -2,10 +2,10 @@
   "version": 2,
   "data": {
     "app-accessibility/handy": {
-      "version": "0.10.1",
-      "gitref": "refs/tags/v0.10.1",
-      "url": "https://github.com/cjpais/Handy/releases/tag/v0.10.1",
-      "creation_time": "2026-11-14T08:50:18Z"
+      "version": "0.10.2",
+      "gitref": "refs/tags/v0.10.2",
+      "url": "https://github.com/cjpais/Handy/releases/tag/v0.10.2",
+      "creation_time": "2026-11-24T06:28:41Z"
     },
     "app-admin/helm": {
       "version": "4.3.2",
@@ -80,12 +80,12 @@
       "creation_time": "2026-11-18T00:18:35Z"
     },
     "dev-util/glab": {
-      "version": "1.131.0",
-      "gitref": "refs/tags/v1.131.0",
-      "revision": "206ebab4fc3fa590b720d2885ac890c195c46650",
-      "url": "https://gitlab.com/gitlab-org/cli/-/tags/v1.131.0",
-      "creation_time": "2026-11-17T12:06:46.000Z",
-      "revision_creation_time": "2026-11-17T10:21:29.000+01:00"
+      "version": "1.132.0",
+      "gitref": "refs/tags/v1.132.0",
+      "revision": "00f5b8fe102e1a07471aadd5a2e44f6ff1befeeb",
+      "url": "https://gitlab.com/gitlab-org/cli/-/tags/v1.132.0",
+      "creation_time": "2026-11-24T12:07:27.000Z",
+      "revision_creation_time": "2026-11-24T10:54:38.000+01:00"
     },
     "dev-util/inspec": {
       "version": "5.24.24",
