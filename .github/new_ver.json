@@ -1,13 +1,115 @@
 {
   "version": 2,
   "data": {
+    "app-accessibility/handy": {
+      "version": "0.10.2",
+      "gitref": "refs/tags/v0.10.2",
+      "url": "https://github.com/cjpais/Handy/releases/tag/v0.10.2",
+      "creation_time": "2026-11-24T06:28:41Z"
+    },
+    "app-admin/helm": {
+      "version": "4.3.2",
+      "gitref": "refs/tags/v4.3.2",
+      "url": "https://github.com/helm/helm/releases/tag/v4.3.2",
+      "creation_time": "2026-11-13T04:53:35Z"
+    },
+    "app-admin/kubectl": {
+      "version": "1.37.3",
+      "gitref": "refs/tags/v1.37.3",
+      "url": "https://github.com/kubernetes/kubernetes/releases/tag/v1.37.3",
+      "creation_time": "2026-11-25T14:55:41Z"
+    },
+    "app-admin/packer": {
+      "version": "1.16.3",
+      "gitref": "refs/tags/v1.16.3",
+      "url": "https://github.com/hashicorp/packer/releases/tag/v1.16.3",
+      "creation_time": "2026-11-25T10:51:22Z"
+    },
+    "app-admin/pulumi": {
+      "version": "3.278.0",
+      "gitref": "refs/tags/v3.278.0",
+      "url": "https://github.com/pulumi/pulumi/releases/tag/v3.278.0",
+      "creation_time": "2026-11-25T12:39:32Z"
+    },
+    "app-admin/scaleway-cli": {
+      "version": "2.67.0",
+      "gitref": "refs/tags/v2.67.0",
+      "url": "https://github.com/scaleway/scaleway-cli/releases/tag/v2.67.0",
+      "creation_time": "2026-11-23T14:34:43Z"
+    },
+    "app-admin/terraform": {
+      "version": "1.17.2",
+      "gitref": "refs/tags/v1.17.2",
+      "url": "https://github.com/hashicorp/terraform/releases/tag/v1.17.2",
+      "creation_time": "2026-11-11T11:56:51Z"
+    },
+    "app-admin/terragrunt": {
+      "version": "1.2.3",
+      "gitref": "refs/tags/v1.2.3",
+      "url": "https://github.com/gruntwork-io/terragrunt/releases/tag/v1.2.3",
+      "creation_time": "2026-11-25T16:29:42Z"
+    },
+    "app-admin/vagrant": {
+      "version": "2.4.9",
+      "gitref": "refs/tags/v2.4.9",
+      "url": "https://github.com/hashicorp/vagrant/releases/tag/v2.4.9",
+      "creation_time": "2025-08-21T07:45:30Z"
+    },
+    "app-crypt/sops": {
+      "version": "3.13.3",
+      "gitref": "refs/tags/v3.13.3",
+      "url": "https://github.com/getsops/sops/releases/tag/v3.13.3",
+      "creation_time": "2026-07-23T05:27:57Z"
+    },
+    "dev-build/just": {
+      "version": "1.59.0",
+      "gitref": "refs/tags/1.59.0",
+      "revision": "86955cf7350674082802c8e886f36769537e0d22",
+      "url": "https://github.com/casey/just/releases/tag/1.59.0"
+    },
+    "dev-node/bun-bin": {
+      "version": "1.4.5",
+      "gitref": "refs/tags/bun-v1.4.5",
+      "url": "https://github.com/oven-sh/bun/releases/tag/bun-v1.4.5",
+      "creation_time": "2026-11-19T08:47:28Z"
+    },
+    "dev-util/github-cli": {
+      "version": "2.105.0",
+      "gitref": "refs/tags/v2.105.0",
+      "url": "https://github.com/cli/cli/releases/tag/v2.105.0",
+      "creation_time": "2026-11-18T00:18:35Z"
+    },
     "dev-util/glab": {
-      "version": "1.132.0",
-      "gitref": "refs/tags/v1.132.0",
-      "revision": "00f5b8fe102e1a07471aadd5a2e44f6ff1befeeb",
-      "url": "https://gitlab.com/gitlab-org/cli/-/tags/v1.132.0",
-      "creation_time": "2026-11-24T12:07:27.000Z",
-      "revision_creation_time": "2026-11-24T10:54:38.000+01:00"
+      "version": "1.133.0",
+      "gitref": "refs/tags/v1.133.0",
+      "revision": "093bdd1b82d84dd066eefc9fac91d382e3128899",
+      "url": "https://gitlab.com/gitlab-org/cli/-/tags/v1.133.0",
+      "creation_time": "2026-11-25T10:08:58.000Z",
+      "revision_creation_time": "2026-11-25T20:02:34.000+10:00"
+    },
+    "dev-util/inspec": {
+      "version": "5.24.24",
+      "gitref": "refs/tags/v5.24.24",
+      "url": "https://github.com/inspec/inspec/releases/tag/v5.24.24",
+      "creation_time": "2026-06-25T13:38:48Z"
+    },
+    "net-vpn/nym-vpn-app": {
+      "version": "2026.16.1",
+      "gitref": "refs/tags/nym-vpn-v2026.16.1",
+      "url": "https://github.com/nymtech/nym-vpn-client/releases/tag/nym-vpn-v2026.16.1",
+      "creation_time": "2026-11-19T09:50:37Z"
+    },
+    "net-vpn/nym-vpn-core": {
+      "version": "2026.16.1",
+      "gitref": "refs/tags/nym-vpn-v2026.16.1",
+      "url": "https://github.com/nymtech/nym-vpn-client/releases/tag/nym-vpn-v2026.16.1",
+      "creation_time": "2026-11-19T09:50:37Z"
+    },
+    "www-client/servo": {
+      "version": "0.8.0",
+      "gitref": "refs/tags/v0.8.0",
+      "url": "https://github.com/servo/servo/releases/tag/v0.8.0",
+      "creation_time": "2026-11-09T12:29:13Z"
     }
   }
 }
